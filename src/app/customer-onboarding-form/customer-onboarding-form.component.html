@@ -1,0 +1,386 @@
+<!-- TODO: HEADER -->
+<div id="header">
+  <!-- This is for Desktop view -->
+  <mat-grid-list
+    cols="3"
+    rowHeight="173px"
+    id="headerDesktop"
+    *ngIf="isMedium || isLarge"
+  >
+    <mat-grid-tile id="leftTile"
+      ><img src="../../assets/Group 1logo.svg" height="75px" alt="logo" />
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" id="rightTile">
+      <div>
+        <h1>Customer Onboarding Form</h1>
+        <div style="float: right;">
+          <img
+            src="../../assets/California first logowhite.svg"
+            alt=""
+            max-height="26px"
+            style="margin-right: 26px;"
+          />
+          <img
+            src="../../assets/Renew pace logowhite.svg"
+            alt=""
+            height="26px"
+          />
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- TODO: This is for Mobile view -->
+  <mat-grid-list
+    cols="1"
+    rowHeight="146px"
+    id="headerMob"
+    *ngIf="isXsmall || isSmall"
+  >
+    <mat-grid-tile id="tileMob">
+      <div>
+        <img
+          src="../../assets/Group 1logo.svg"
+          height="60px"
+          alt="logo"
+          style="margin-bottom: 8px;"
+        />
+        <h1>Customer Onboarding Form</h1>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<!-- TODO: FORM -->
+<div id="form">
+  <form
+    #customerForm="ngForm"
+    (ngSubmit)="submitCustomerForm(customerForm)"
+    [style.margin-left.px]="formMargin"
+    [style.margin-right.px]="formMargin"
+  >
+    <!-- Primary Information -->
+    <div>
+      <h1 [ngStyle]="setMyStyles()">
+        1. Primary Information
+      </h1>
+      <mat-grid-list [cols]="primaryCol" gutterSize="70px" rowHeight="100px">
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>First Name </mat-label>
+            <input
+              matInput
+              required
+              ngModel
+              name="firstName"
+              #firstName="ngModel"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Last Name </mat-label>
+            <input
+              matInput
+              required
+              ngModel
+              name="lastName"
+              #lastName="ngModel"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Mobile Number </mat-label>
+            <input matInput required ngModel name="mobile" #mobile="ngModel" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Email ID </mat-label>
+            <input matInput required ngModel name="email" #email="ngModel" />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Birth Date </mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              required
+              ngModel
+              name="dob"
+              #dob="ngModel"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Social Security Number </mat-label>
+            <input matInput required ngModel name="ssNo" #ssNo="ngModel" />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <!-- Income & Other Information -->
+    <div>
+      <h1 [ngStyle]="setMyStyles()">
+        2. Income & Other Information
+      </h1>
+      <mat-grid-list [cols]="primaryCol" gutterSize="70px" rowHeight="100px">
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Income </mat-label>
+            <input matInput required ngModel name="income" #income="ngModel" />
+            <span matSuffix class="dollarIcon">$</span>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Source of Income </mat-label>
+            <mat-select required ngModel name="sOfIncome" #sOfIncome="ngModel">
+              <mat-option value="option1">option 1</mat-option>
+              <mat-option value="option2">option 2</mat-option>
+              <mat-option value="option3">option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>How many people live in your house? </mat-label>
+            <mat-select
+              required
+              ngModel
+              name="noOfPeople"
+              #noOfPeople="ngModel"
+            >
+              <mat-option value="option1">option 1</mat-option>
+              <mat-option value="option1">option 2</mat-option>
+              <mat-option value="option2">option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-checkbox style="margin-top: 47px;"
+            >Do you live at the same address</mat-checkbox
+          >
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+    <!-- Documents -->
+    <div>
+      <h1 [ngStyle]="setMyStyles()">
+        3. Documents
+        <span style="font-size: 24px;"
+          >(Minimal Documentation for Faster Pre Qualification)</span
+        >
+      </h1>
+      <mat-grid-list [cols]="documentsCol" gutterSize="70px" rowHeight="100px">
+        <mat-grid-tile [style.margin-top.px]="isXsmall ? '50' : '0'">
+          <mat-form-field appearance="standard">
+            <mat-label>Driving Licence </mat-label>
+            <ngx-mat-file-input ngModel name="drivingLicence" required>
+            </ngx-mat-file-input>
+            <img
+              src="../../assets/Add Component.svg"
+              alt=""
+              matSuffix
+              matTooltip="Upload valid Driving license"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Bank Statement </mat-label>
+            <ngx-mat-file-input ngModel name="bankStatement" required>
+            </ngx-mat-file-input>
+            <img
+              src="../../assets/Add Component.svg"
+              alt=""
+              matSuffix
+              matTooltip="Upload Bank statement within last 3 months"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="isLarge"></mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Title Deed </mat-label>
+            <ngx-mat-file-input ngModel name="titleDeed" required>
+            </ngx-mat-file-input>
+            <img
+              src="../../assets/Add Component.svg"
+              alt=""
+              matSuffix
+              matTooltip="Upload"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Credit Report </mat-label>
+            <ngx-mat-file-input ngModel name="creditReport" required>
+            </ngx-mat-file-input>
+            <img
+              src="../../assets/Add Component.svg"
+              alt=""
+              matSuffix
+              matTooltip="Upload"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="isLarge"></mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Tax Returns </mat-label>
+            <ngx-mat-file-input ngModel name="taxReturns"> </ngx-mat-file-input>
+            <img
+              src="../../assets/Add Component.svg"
+              alt=""
+              matSuffix
+              matTooltip="Upload latest Tax returns"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Property Value </mat-label>
+            <ngx-mat-file-input ngModel name="propertyValue">
+            </ngx-mat-file-input>
+            <img
+              src="../../assets/Add Component.svg"
+              alt=""
+              matSuffix
+              matTooltip="Upload copy of property appraisal form"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Utility Bill </mat-label>
+            <ngx-mat-file-input ngModel name="utilityBill">
+            </ngx-mat-file-input>
+            <img
+              src="../../assets/Add Component.svg"
+              alt=""
+              matSuffix
+              matTooltip="Upload latest utility bill"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <!-- Contractor Information -->
+    <div>
+      <h1 [ngStyle]="setMyStyles()">4. Contractor Information</h1>
+      <mat-grid-list
+        [cols]="contractorInfoCol"
+        gutterSize="70px"
+        rowHeight="100px"
+      >
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Apply with Renew Contractor (or)</mat-label>
+            <mat-select
+              required
+              ngModel
+              name="applyWithRenew"
+              #applyWithRenew="ngModel"
+            >
+              <mat-option value="option1">option 1</mat-option>
+              <mat-option value="option1">option 2</mat-option>
+              <mat-option value="option2">option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="standard">
+            <mat-label>Apply with Non Renew Contractor</mat-label>
+            <input
+              matInput
+              required
+              ngModel
+              name="applyWithNonRenew"
+              #applyWithNonRenew="ngModel"
+              placeholder="Enter Manually"
+            />
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </form>
+</div>
+
+<!-- TODO: FOOTER -->
+<div id="footer" style="margin-top: 50px">
+  <mat-grid-list
+    cols="3"
+    rowHeight="173px"
+    id="footerDesktop"
+    *ngIf="isMedium || isLarge"
+  >
+    <mat-grid-tile id="leftTile"
+      ><img src="../../assets/Renew logo.svg" height="80px" alt="logo" />
+    </mat-grid-tile>
+    <mat-grid-tile id="middleTile">
+      <div>
+        <p style="color: #9E9E9E;">Contact Us</p>
+        <p>info@renewfinancial.com</p>
+        <p style="margin-top: 5px;">844-736-3934</p>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile id="logoTile">
+      <img src="../../assets/Group 4.svg" alt="line" height="80px" />
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- Footer Mobile View -->
+  <div id="footerMob" *ngIf="isXsmall || isSmall">
+    <mat-grid-list cols="6" rowHeight="48px">
+      <mat-grid-tile colspan="2" class="footerLogo"
+        ><img src="../../assets/Group 1logo.svg" height="27px" alt="logo" />
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" class="footerLogo">
+        <img
+          src="../../assets/California first logowhite.svg"
+          alt="California first"
+          height="21px"
+        />
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" class="footerLogo">
+        <img
+          src="../../assets/Renew pace logowhite.svg"
+          alt="Renew pace"
+          height="21px"
+        />
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        <div>
+          <p style="color: #fff;">Contact Us</p>
+          <p>info@renewfinancial.com</p>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        <p style="font-size: 18px;">844-736-3934</p>
+      </mat-grid-tile>
+
+      <!-- <mat-grid-tile colspan="6" style="margin : 0 20px">
+        <mat-icon style="color: #fff;">copyright</mat-icon>
+        <span style="color: #fff;">
+          2020 Renew Financial, 1221 Broadway, 4th floor, Oakland, CA
+          94612</span
+        >
+      </mat-grid-tile> -->
+    </mat-grid-list>
+    <h5 style="text-align: center;color: #fff; padding: 10px; font-size: 10px;">
+      <mat-icon style="color: #fff;">copyright</mat-icon>2020 Renew Financial,
+      1221 Broadway, 4th floor, Oakland, CA 94612
+    </h5>
+  </div>
+</div>
