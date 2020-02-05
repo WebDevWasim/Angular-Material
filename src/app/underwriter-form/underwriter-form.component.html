@@ -1,0 +1,43 @@
+<!-- TODO: HEADER -->
+<div id="header">
+  <!-- This is for Desktop view -->
+  <mat-grid-list
+    cols="3"
+    rowHeight="173px"
+    id="headerDesktop"
+    *ngIf="isMedium || isLarge"
+  >
+    <mat-grid-tile id="headerLeftTile"
+      ><img src="../../assets/Group 1logo.svg" height="75px" alt="logo" />
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2" id="headerRightTile">
+      <div>
+        <h1>Underwriter</h1>
+        <div style="float: right;">
+          <button mat-stroked-button id="logoutBtn">
+            Signout
+          </button>
+        </div>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- TODO: This is for Mobile view -->
+  <mat-grid-list
+    cols="1"
+    rowHeight="146px"
+    id="headerMob"
+    *ngIf="isXsmall || isSmall"
+  >
+    <mat-grid-tile id="headerMobTile">
+      <div>
+        <img
+          src="../../assets/Group 1logo.svg"
+          height="60px"
+          alt="logo"
+          style="margin-bottom: 8px;"
+        />
+        <h1>Customer Onboarding Form</h1>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

@@ -26,13 +26,18 @@
   <adf-sidenav-layout-navigation>
     <ng-template let-isMenuMinimized="isMenuMinimized">
       <mat-nav-list class="adf-sidenav-linklist">
-        <a mat-list-item class="adf-sidenav-link" routerLink="/renew">
+        <a mat-list-item class="adf-sidenav-link" routerLink="/customer">
           <mat-icon matListIcon class="sidenav-menu-icon">assignment</mat-icon>
           <div class="sidenav-menu-label" *ngIf="!isMenuMinimized()">
-            Renew
+            Customer
           </div>
         </a>
-
+        <a mat-list-item class="adf-sidenav-link" routerLink="/underwriter">
+          <mat-icon matListIcon class="sidenav-menu-icon">assignment</mat-icon>
+          <div class="sidenav-menu-label" *ngIf="!isMenuMinimized()">
+            Underwriter
+          </div>
+        </a>
         <!-- TODO: Logout Tab -->
         <a mat-list-item adf-logout class="adf-sidenav-link">
           <mat-icon matListIcon class="sidenav-menu-icon">exit_to_app</mat-icon>

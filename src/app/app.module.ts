@@ -34,6 +34,7 @@ import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/cust
 import { MAT_LABEL_GLOBAL_OPTIONS } from "@angular/material";
 import { MaterialFileInputModule } from "ngx-material-file-input";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { UnderwriterFormComponent } from './underwriter-form/underwriter-form.component';
 
 @NgModule({
   imports: [
@@ -67,7 +68,8 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     AppLayoutComponent,
     FileViewComponent,
     BlobViewComponent,
-    CustomerOnboardingFormComponent
+    CustomerOnboardingFormComponent,
+    UnderwriterFormComponent
   ],
   providers: [
     PreviewService,

@@ -29,6 +29,7 @@ import { StartProcessComponent } from "./start-process/start-process.component";
 import { AppLayoutComponent } from "./app-layout/app-layout.component";
 import { FileViewComponent } from "./file-view/file-view.component";
 import { BlobViewComponent } from "./file-view/blob-view.component";
+import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
 
 export const appRoutes: Routes = [
   {
@@ -56,8 +57,12 @@ export const appRoutes: Routes = [
         component: HomeComponent
       },
       {
-        path: "renew",
+        path: "customer",
         component: CustomerOnboardingFormComponent
+      },
+      {
+        path: "underwriter",
+        component: UnderwriterFormComponent
       },
       {
         path: "apps",
