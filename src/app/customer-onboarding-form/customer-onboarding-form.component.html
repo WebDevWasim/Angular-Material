@@ -64,7 +64,11 @@
         <h1 [ngStyle]="setMyStyles()">
           1. Primary Information
         </h1>
-        <mat-grid-list [cols]="primaryCol" gutterSize="70px" rowHeight="100px">
+        <mat-grid-list
+          [cols]="primaryCol"
+          [gutterSize]="gutterSize"
+          [rowHeight]="rowHeight"
+        >
           <mat-grid-tile>
             <mat-form-field appearance="standard">
               <mat-label>First Name </mat-label>
@@ -139,7 +143,11 @@
         <h1 [ngStyle]="setMyStyles()">
           2. Income & Other Information
         </h1>
-        <mat-grid-list [cols]="primaryCol" gutterSize="70px" rowHeight="100px">
+        <mat-grid-list
+          [cols]="primaryCol"
+          [gutterSize]="gutterSize"
+          [rowHeight]="rowHeight"
+        >
           <mat-grid-tile>
             <mat-form-field appearance="standard">
               <mat-label>Income </mat-label>
@@ -184,16 +192,19 @@
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox style="margin-top: 47px;"
-              >Do you live at the same address</mat-checkbox
-            >
+            <mat-checkbox style="margin-top: 0px;"
+              >Do you live at the same address
+            </mat-checkbox>
           </mat-grid-tile>
         </mat-grid-list>
       </div>
 
       <!--3. Documents -->
       <div>
-        <h1 [ngStyle]="setMyStyles()">
+        <h1
+          [ngStyle]="setMyStyles()"
+          [style.margin-bottom.px]="isXsmall ? '90' : '60'"
+        >
           3. Documents
           <span style="font-size: 24px;"
             >(Minimal Documentation for Faster Pre Qualification)</span
@@ -201,16 +212,16 @@
         </h1>
         <mat-grid-list
           [cols]="documentsCol"
-          gutterSize="70px"
-          rowHeight="100px"
+          [gutterSize]="gutterSize"
+          [rowHeight]="rowHeight"
         >
-          <mat-grid-tile [style.margin-top.px]="isXsmall ? '50' : '0'">
+          <mat-grid-tile>
             <mat-form-field appearance="standard">
               <mat-label>Driving Licence </mat-label>
               <ngx-mat-file-input ngModel name="drivingLicence" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Add Component.svg"
+                src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
                 matTooltip="Upload valid Driving license"
@@ -223,7 +234,7 @@
               <ngx-mat-file-input ngModel name="bankStatement" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Add Component.svg"
+                src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
                 matTooltip="Upload Bank statement within last 3 months"
@@ -237,7 +248,7 @@
               <ngx-mat-file-input ngModel name="titleDeed" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Add Component.svg"
+                src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
                 matTooltip="Upload"
@@ -250,7 +261,7 @@
               <ngx-mat-file-input ngModel name="creditReport" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Add Component.svg"
+                src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
                 matTooltip="Upload"
@@ -265,7 +276,7 @@
               <ngx-mat-file-input ngModel name="taxReturns">
               </ngx-mat-file-input>
               <img
-                src="../../assets/Add Component.svg"
+                src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
                 matTooltip="Upload latest Tax returns"
@@ -278,7 +289,7 @@
               <ngx-mat-file-input ngModel name="propertyValue">
               </ngx-mat-file-input>
               <img
-                src="../../assets/Add Component.svg"
+                src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
                 matTooltip="Upload copy of property appraisal form"
@@ -291,7 +302,7 @@
               <ngx-mat-file-input ngModel name="utilityBill">
               </ngx-mat-file-input>
               <img
-                src="../../assets/Add Component.svg"
+                src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
                 matTooltip="Upload latest utility bill"
@@ -306,7 +317,7 @@
         <mat-grid-list
           [cols]="contractorInfoCol"
           gutterSize="70px"
-          rowHeight="100px"
+          [rowHeight]="rowHeight"
         >
           <mat-grid-tile>
             <mat-form-field appearance="standard">

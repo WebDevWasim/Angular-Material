@@ -14,6 +14,9 @@ export class CustomerOnboardingFormComponent implements OnInit {
   constructor(public breakpointObserver: BreakpointObserver) {}
 
   // Instance Variables
+  public gutterSize: number = 50;
+  public rowHeight: number = 65;
+
   public primaryCol: number;
   public documentsCol: number;
   public contractorInfoCol: number;
@@ -87,7 +90,7 @@ export class CustomerOnboardingFormComponent implements OnInit {
 
           this.fontSize = 36;
           this.formMargin = 97;
-          this.titleMargin = 80;
+          this.titleMargin = 60;
           this.buttonTopMargin = 90;
           this.buttonBottomMargin = 30;
         } else {
@@ -103,7 +106,7 @@ export class CustomerOnboardingFormComponent implements OnInit {
 
           this.fontSize = 36;
           this.formMargin = 97;
-          this.titleMargin = 80;
+          this.titleMargin = 60;
           this.buttonTopMargin = 50;
           this.buttonBottomMargin = 20;
         }

@@ -31,10 +31,10 @@ import { AppLayoutComponent } from "./app-layout/app-layout.component";
 import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/customer-onboarding-form.component";
 
 // Manually Added
-import { MAT_LABEL_GLOBAL_OPTIONS } from "@angular/material";
+// import { MAT_LABEL_GLOBAL_OPTIONS } from "@angular/material";
 import { MaterialFileInputModule } from "ngx-material-file-input";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { UnderwriterFormComponent } from './underwriter-form/underwriter-form.component';
+import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
 
 @NgModule({
   imports: [
@@ -80,8 +80,8 @@ import { UnderwriterFormComponent } from './underwriter-form/underwriter-form.co
         name: "app",
         source: "resources"
       }
-    },
-    { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: "always" } }
+    }
+    // { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: "always" } }
   ],
   bootstrap: [AppComponent]
 })

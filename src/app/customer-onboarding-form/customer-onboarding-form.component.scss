@@ -51,9 +51,6 @@ $white: #fff;
 
 // Responsive Tiles
 ::ng-deep {
-  //   .mat-grid-tile .mat-figure {
-  //     justify-content: flex-start !important;
-  //   }
   .checkBoxTile {
     .mat-figure {
       align-items: center !important;
@@ -82,9 +79,9 @@ $white: #fff;
 #form {
   @include textStyle(h1, 48, 36, $headingDark);
 
-  .mat-grid-tile .mat-figure {
-    display: block !important;
-  }
+  // .mat-grid-tile .mat-figure {
+  //   display: block !important;
+  // }
 
   // Dollar Icon
   .dollarIcon {
@@ -99,7 +96,7 @@ $white: #fff;
     .mat-input-element {
       color: $headingDark;
       font-size: 14px;
-      line-height: 64px;
+      // line-height: 64px;
     }
     .mat-form-field-label {
       @include text(21, 14, $labelDark);
@@ -123,7 +120,7 @@ $white: #fff;
     .mat-select-value {
       color: $headingDark;
       font-size: 14px;
-      line-height: 64px;
+      // line-height: 64px;
     }
   }
   // Focused: (when selected)
@@ -148,7 +145,10 @@ $white: #fff;
     .mat-select-value {
       color: $headingDark;
       font-size: 22px;
-      line-height: 64px;
+      // line-height: 64px;
+    }
+    .mat-input-element {
+      caret-color: $green;
     }
   }
 
@@ -157,9 +157,9 @@ $white: #fff;
     color: $green !important;
   }
 
-  .mat-form-field-infix {
-    line-height: 64px !important;
-  }
+  // .mat-form-field-infix {
+  //   line-height: 64px !important;
+  // }
 }
 
 // TODO: Custom Checkbox
@@ -189,6 +189,7 @@ $white: #fff;
 }
 
 /deep/ #tAndCheckbox .mat-checkbox-layout .mat-checkbox-label {
+  font-family: $fontFamily;
   color: #4b4b4b;
 }
 
@@ -201,8 +202,12 @@ $white: #fff;
 
 // T & C p text styling
 #tAndC {
+  /deep/ #tAndCheckbox .mat-checkbox-layout {
+    white-space: normal !important;
+  }
   /deep/ #tAndCheckbox .mat-checkbox-layout .mat-checkbox-label {
     white-space: normal !important;
+    font-family: $fontFamily;
     text-align: justify;
     text-justify: inter-word;
   }
