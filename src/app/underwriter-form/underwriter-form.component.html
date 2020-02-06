@@ -43,7 +43,7 @@
 </div>
 
 <!-- TODO: TAB -->
-<div id="tab">
+<div>
   <mat-tab-group>
     <mat-tab label="Search/Task"> Content 1 </mat-tab>
 
@@ -346,6 +346,123 @@
               <h1 [ngStyle]="setMyStyles()">
                 Super Summary
               </h1>
+              <div>
+                <mat-grid-list
+                  [cols]="primaryCol"
+                  [gutterSize]="gutterSize"
+                  rowHeight="530px"
+                >
+                  <!-- =============== Applicant -->
+                  <mat-grid-tile id="applicantTile">
+                    <div style="margin-top: 40px;">
+                      <h2>Applicant</h2>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Address</mat-label>
+                        <input matInput required ngModel name="address" />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Employments</mat-label>
+                        <input matInput required ngModel name="employments" />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Credit Scores</mat-label>
+                        <input matInput required ngModel name="creditScores" />
+                      </mat-form-field>
+                    </div>
+                  </mat-grid-tile>
+                  <!-- ======================= Decision Engine Result Summary -->
+                  <mat-grid-tile id="decisionTile">
+                    <div style="margin-top: 40px;">
+                      <h2>Decision Engine Result Summary</h2>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Applicant Risk Score</mat-label>
+                        <input matInput required ngModel name="riskScore" />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Bankruptcy History</mat-label>
+                        <input
+                          matInput
+                          required
+                          ngModel
+                          name="bankruptcyHistory"
+                        />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label
+                          >Statuatory litigations on property</mat-label
+                        >
+                        <input matInput required ngModel name="statuatory" />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label
+                          >Pending payments towards Mortgages</mat-label
+                        >
+                        <input
+                          matInput
+                          required
+                          ngModel
+                          name="pendingPayments"
+                        />
+                      </mat-form-field>
+                    </div>
+                  </mat-grid-tile>
+                  <!-- ================ Calculator Options -->
+                  <mat-grid-tile id="calculatorTile">
+                    <div style="margin-top: 40px;">
+                      <h2>Calculator Options</h2>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Billing Cycle</mat-label>
+                        <input
+                          matInput
+                          required
+                          ngModel
+                          name="billingCycle"
+                          matTooltip="Select the Payment Frequency"
+                          [matTooltipPosition]="tooltipPosition"
+                        />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Interest Installment Method</mat-label>
+                        <input
+                          matInput
+                          required
+                          ngModel
+                          name="interestInstallment"
+                          matTooltip="Select the Installment method : Equal payments or final payment differs"
+                          [matTooltipPosition]="tooltipPosition"
+                        />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Bill Method</mat-label>
+                        <input
+                          matInput
+                          required
+                          ngModel
+                          name="billMethod"
+                          matTooltip="Select the billing method as either Level, percentage of principal plus interest, interest only, fixed principal plus Interest, percentage of outstanding balance"
+                          [matTooltipPosition]="tooltipPosition"
+                        />
+                      </mat-form-field>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Calendar Method</mat-label>
+                        <input
+                          matInput
+                          required
+                          ngModel
+                          name="calendarMethod"
+                          matTooltip="Select the calendar method as ‘Hijri’ or ‘Gregorian’ for this loan contract"
+                          [matTooltipPosition]="tooltipPosition"
+                        />
+                      </mat-form-field>
+                      <h2 style="margin-top: 25px;">Rate</h2>
+                      <mat-form-field appearance="standard">
+                        <mat-label>Rate</mat-label>
+                        <input matInput required ngModel name="rate" />
+                      </mat-form-field>
+                    </div>
+                  </mat-grid-tile>
+                </mat-grid-list>
+              </div>
             </form>
           </mat-tab>
           <mat-tab label="Applicant"> Empty Content </mat-tab>
@@ -362,4 +479,85 @@
     </mat-tab>
     <mat-tab label="Review Requests Pending. (pending 0)"> Content 3 </mat-tab>
   </mat-tab-group>
+</div>
+
+<!-- TODO: FOOTER -->
+<div id="footer">
+  <mat-grid-list
+    cols="3"
+    rowHeight="173px"
+    id="footerDesktop"
+    *ngIf="isMedium || isLarge"
+  >
+    <mat-grid-tile id="footerLeftTile"
+      ><img src="../../assets/Renew logo.svg" height="70px" alt="logo" />
+    </mat-grid-tile>
+    <mat-grid-tile id="footerMiddleTile">
+      <div>
+        <div>
+          <img
+            src="../../assets/California First logo.svg"
+            alt="California First"
+            height="22px"
+          />
+        </div>
+        <div style="margin-top: 10px;">
+          <img
+            src="../../assets/Renew Pace logo.svg"
+            alt="Renew Pace"
+            height="22px"
+          />
+        </div>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile id="footerRightTile">
+      <img src="../../assets/Group 4.svg" alt="line" height="70px" />
+    </mat-grid-tile>
+  </mat-grid-list>
+  <!-- Footer Mobile View -->
+  <div id="footerMob" *ngIf="isXsmall || isSmall">
+    <mat-grid-list cols="6" rowHeight="48px">
+      <mat-grid-tile colspan="2" class="footerLogo"
+        ><img src="../../assets/Group 1logo.svg" height="27px" alt="logo" />
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" class="footerLogo">
+        <img
+          src="../../assets/California first logowhite.svg"
+          alt="California first"
+          height="21px"
+        />
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" class="footerLogo">
+        <img
+          src="../../assets/Renew pace logowhite.svg"
+          alt="Renew pace"
+          height="21px"
+        />
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        <div>
+          <p style="color: #fff;">Contact Us</p>
+          <p>info@renewfinancial.com</p>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3">
+        <p style="font-size: 18px;">844-736-3934</p>
+      </mat-grid-tile>
+
+      <!-- <mat-grid-tile colspan="6" style="margin : 0 20px">
+            <mat-icon style="color: #fff;">copyright</mat-icon>
+            <span style="color: #fff;">
+              2020 Renew Financial, 1221 Broadway, 4th floor, Oakland, CA
+              94612</span
+            >
+          </mat-grid-tile> -->
+    </mat-grid-list>
+    <h5
+      style="text-align: center;color: #fff; padding: 10px; margin-top: 0px; padding-top: 0px; margin: 0; font-size: 10px;"
+    >
+      <mat-icon style="color: #fff;">copyright</mat-icon>2020 Renew Financial,
+      1221 Broadway, 4th floor, Oakland, CA 94612
+    </h5>
+  </div>
+  <div id="end"></div>
 </div>

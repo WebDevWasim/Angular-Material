@@ -59,4 +59,23 @@
   h1 {
     @include textStyle(36, 48, 500, $headingDark);
   }
+
+  @include matFigure(applicantTile, flex-start, flex-start);
+  @include matFigure(decisionTile, flex-start, flex-start);
+  @include matFigure(calculatorTile, flex-start, flex-start);
+
+  h2 {
+    @include textStyle(18, 24, 500, $headingDark);
+  }
+}
+
+// Footer
+#footer {
+  @include matFigure(footerLeftTile, center, flex-start, 80);
+  @include matFigure(footerRightTile, center, flex-end);
+  @include matFigure(footerMiddleTile, center, center);
+}
+#end {
+  height: 25px;
+  background: $green;
 }
