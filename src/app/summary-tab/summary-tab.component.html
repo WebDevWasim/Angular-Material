@@ -1,3 +1,113 @@
-<p>
-  summary-tab works!
-</p>
+<form
+  id="nestedForm"
+  [style.margin-left.px]="formMargin"
+  [style.margin-right.px]="formMargin"
+  style="margin-top: 62px;"
+>
+  <h1 [ngStyle]="setMyStyles()">
+    Super Summary
+  </h1>
+  <div>
+    <mat-grid-list
+      [cols]="primaryCol"
+      [gutterSize]="gutterSize"
+      rowHeight="530px"
+    >
+      <!-- =============== Applicant -->
+      <mat-grid-tile id="applicantTile">
+        <div style="margin-top: 40px;">
+          <h2>Applicant</h2>
+          <mat-form-field appearance="standard">
+            <mat-label>Address</mat-label>
+            <input matInput required ngModel name="address" />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Employments</mat-label>
+            <input matInput required ngModel name="employments" />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Credit Scores</mat-label>
+            <input matInput required ngModel name="creditScores" />
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <!-- ======================= Decision Engine Result Summary -->
+      <mat-grid-tile id="decisionTile">
+        <div style="margin-top: 40px;">
+          <h2>Decision Engine Result Summary</h2>
+          <mat-form-field appearance="standard">
+            <mat-label>Applicant Risk Score</mat-label>
+            <input matInput required ngModel name="riskScore" />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Bankruptcy History</mat-label>
+            <input matInput required ngModel name="bankruptcyHistory" />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Statuatory litigations on property</mat-label>
+            <input matInput required ngModel name="statuatory" />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Pending payments towards Mortgages</mat-label>
+            <input matInput required ngModel name="pendingPayments" />
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+      <!-- ================ Calculator Options -->
+      <mat-grid-tile id="calculatorTile">
+        <div style="margin-top: 40px;">
+          <h2>Calculator Options</h2>
+          <mat-form-field appearance="standard">
+            <mat-label>Billing Cycle</mat-label>
+            <input
+              matInput
+              required
+              ngModel
+              name="billingCycle"
+              matTooltip="Select the Payment Frequency"
+              [matTooltipPosition]="tooltipPosition"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Interest Installment Method</mat-label>
+            <input
+              matInput
+              required
+              ngModel
+              name="interestInstallment"
+              matTooltip="Select the Installment method : Equal payments or final payment differs"
+              [matTooltipPosition]="tooltipPosition"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Bill Method</mat-label>
+            <input
+              matInput
+              required
+              ngModel
+              name="billMethod"
+              matTooltip="Select the billing method as either Level, percentage of principal plus interest, interest only, fixed principal plus Interest, percentage of outstanding balance"
+              [matTooltipPosition]="tooltipPosition"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Calendar Method</mat-label>
+            <input
+              matInput
+              required
+              ngModel
+              name="calendarMethod"
+              matTooltip="Select the calendar method as ‘Hijri’ or ‘Gregorian’ for this loan contract"
+              [matTooltipPosition]="tooltipPosition"
+            />
+          </mat-form-field>
+          <h2 style="margin-top: 25px;">Rate</h2>
+          <mat-form-field appearance="standard">
+            <mat-label>Rate</mat-label>
+            <input matInput required ngModel name="rate" />
+          </mat-form-field>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</form>

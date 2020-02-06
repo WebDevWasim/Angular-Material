@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation, ViewChild } from "@angular/core";
 import {
   BreakpointObserver,
   Breakpoints,
@@ -13,6 +13,23 @@ import {
 })
 export class UnderwriterFormComponent implements OnInit {
   constructor(public breakpointObserver: BreakpointObserver) {}
+
+  public tabs = Array.from(Array(20).keys());
+
+  // @ViewChild("tabGroup")
+  // tabGroup;
+
+  // scrollTabs(event) {
+  //   const children = this.tabGroup._tabHeader._elementRef.nativeElement
+  //     .children;
+  //   const back = children[0];
+  //   const forward = children[2];
+  //   if (event.deltaY > 0) {
+  //     forward.click();
+  //   } else {
+  //     back.click();
+  //   }
+  // }
 
   // Instance Variables
   public gutterSize: number = 50;

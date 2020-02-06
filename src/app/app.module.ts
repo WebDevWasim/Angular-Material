@@ -35,8 +35,9 @@ import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/cust
 import { MaterialFileInputModule } from "ngx-material-file-input";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
-import { UnderwriterTabComponent } from './underwriter-tab/underwriter-tab.component';
-import { SummaryTabComponent } from './summary-tab/summary-tab.component';
+import { UnderwriterTabComponent } from "./underwriter-tab/underwriter-tab.component";
+import { SummaryTabComponent } from "./summary-tab/summary-tab.component";
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 @NgModule({
   imports: [
@@ -56,7 +57,8 @@ import { SummaryTabComponent } from './summary-tab/summary-tab.component';
     }),
     StencilsModule,
     MaterialFileInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ScrollingModule
   ],
   declarations: [
     AppComponent,

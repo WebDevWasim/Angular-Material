@@ -1,3 +1,5 @@
+import { SummaryTabComponent } from "./summary-tab/summary-tab.component";
+import { UnderwriterTabComponent } from "./underwriter-tab/underwriter-tab.component";
 import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/customer-onboarding-form.component";
 /*!
  * @license
@@ -61,9 +63,22 @@ export const appRoutes: Routes = [
         component: CustomerOnboardingFormComponent
       },
       {
-        path: "underwriter",
-        component: UnderwriterFormComponent
+        path: "forms",
+        component: UnderwriterFormComponent,
+        children: [
+          {
+            path: "underwriter",
+            component: UnderwriterTabComponent,
+            children: [
+              {
+                path: "summary",
+                component: SummaryTabComponent
+              }
+            ]
+          }
+        ]
       },
+
       {
         path: "apps",
         component: AppsComponent,
