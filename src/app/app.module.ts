@@ -35,6 +35,8 @@ import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/cust
 import { MaterialFileInputModule } from "ngx-material-file-input";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
+import { UnderwriterTabComponent } from './underwriter-tab/underwriter-tab.component';
+import { SummaryTabComponent } from './summary-tab/summary-tab.component';
 
 @NgModule({
   imports: [
@@ -69,7 +71,9 @@ import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.co
     FileViewComponent,
     BlobViewComponent,
     CustomerOnboardingFormComponent,
-    UnderwriterFormComponent
+    UnderwriterFormComponent,
+    UnderwriterTabComponent,
+    SummaryTabComponent
   ],
   providers: [
     PreviewService,
