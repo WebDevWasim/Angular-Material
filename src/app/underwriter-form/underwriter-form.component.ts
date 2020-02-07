@@ -1,9 +1,18 @@
-import { Component, OnInit, ViewEncapsulation, ViewChild } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  AfterViewInit,
+  ViewChild,
+  ViewChildren
+} from "@angular/core";
 import {
   BreakpointObserver,
   Breakpoints,
   BreakpointState
 } from "@angular/cdk/layout";
+// remove
+import { MatTab, MatTabGroup } from "@angular/material";
 
 @Component({
   selector: "app-underwriter-form",
@@ -11,25 +20,8 @@ import {
   styleUrls: ["./underwriter-form.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
-export class UnderwriterFormComponent implements OnInit {
+export class UnderwriterFormComponent implements OnInit, AfterViewInit {
   constructor(public breakpointObserver: BreakpointObserver) {}
-
-  public tabs = Array.from(Array(20).keys());
-
-  // @ViewChild("tabGroup")
-  // tabGroup;
-
-  // scrollTabs(event) {
-  //   const children = this.tabGroup._tabHeader._elementRef.nativeElement
-  //     .children;
-  //   const back = children[0];
-  //   const forward = children[2];
-  //   if (event.deltaY > 0) {
-  //     forward.click();
-  //   } else {
-  //     back.click();
-  //   }
-  // }
 
   // Instance Variables
   public gutterSize: number = 50;
@@ -52,6 +44,35 @@ export class UnderwriterFormComponent implements OnInit {
   public isSmall: boolean;
   public isMedium: boolean;
   public isLarge: boolean;
+
+  // ==============================================
+
+  @ViewChild(MatTabGroup) group;
+  @ViewChildren(MatTab) tabs;
+  tab_num = 0;
+  selected = 0;
+  SWIPE_ACTION = { LEFT: "swipeleft", RIGHT: "swiperight" };
+
+  number_tabs;
+  ngAfterViewInit() {
+    this.tab_num = this.tabs.length;
+    console.log(this.group);
+  }
+  swipe(eType) {
+    console.log(eType);
+    if (eType === this.SWIPE_ACTION.LEFT && this.selected > 0) {
+      console.log("movin left");
+      this.selected--;
+    } else if (
+      eType === this.SWIPE_ACTION.RIGHT &&
+      this.selected < this.tab_num
+    ) {
+      console.log("movin right");
+      this.selected++;
+    }
+    console.log(this.selected);
+  }
+  // ===============================================
 
   ngOnInit() {
     this.breakpointObserver
@@ -76,7 +97,7 @@ export class UnderwriterFormComponent implements OnInit {
 
           this.fontSize = 28;
           // this.spanText = 20;
-          this.formMargin = 30;
+          this.formMargin = 35;
           this.titleMargin = 50;
           // this.buttonTopMargin = 120;
           // this.buttonBottomMargin = 50;

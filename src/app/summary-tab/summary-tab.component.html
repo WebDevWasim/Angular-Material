@@ -11,10 +11,10 @@
     <mat-grid-list
       [cols]="primaryCol"
       [gutterSize]="gutterSize"
-      rowHeight="530px"
+      rowHeight="20px"
     >
       <!-- =============== Applicant -->
-      <mat-grid-tile id="applicantTile">
+      <mat-grid-tile id="applicantTile" [rowspan]="applicantRow">
         <div style="margin-top: 40px;">
           <h2>Applicant</h2>
           <mat-form-field appearance="standard">
@@ -32,8 +32,11 @@
         </div>
       </mat-grid-tile>
       <!-- ======================= Decision Engine Result Summary -->
-      <mat-grid-tile id="decisionTile">
-        <div style="margin-top: 40px;">
+      <mat-grid-tile id="decisionTile" [rowspan]="decisionRow">
+        <div
+          style="margin-top: 40px;"
+          [style.margin-top.px]="isXsmall ? '0' : '40'"
+        >
           <h2>Decision Engine Result Summary</h2>
           <mat-form-field appearance="standard">
             <mat-label>Applicant Risk Score</mat-label>
@@ -54,8 +57,11 @@
         </div>
       </mat-grid-tile>
       <!-- ================ Calculator Options -->
-      <mat-grid-tile id="calculatorTile">
-        <div style="margin-top: 40px;">
+      <mat-grid-tile id="calculatorTile" [rowspan]="calculatorRow">
+        <div
+          style="margin-top: 40px;"
+          [style.margin-top.px]="isLarge ? '40' : '0'"
+        >
           <h2>Calculator Options</h2>
           <mat-form-field appearance="standard">
             <mat-label>Billing Cycle</mat-label>

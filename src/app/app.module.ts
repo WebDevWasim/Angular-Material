@@ -37,7 +37,13 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
 import { UnderwriterTabComponent } from "./underwriter-tab/underwriter-tab.component";
 import { SummaryTabComponent } from "./summary-tab/summary-tab.component";
-import { ScrollingModule } from "@angular/cdk/scrolling";
+import { MatTabsModule } from "@angular/material/tabs";
+import {
+  HammerGestureConfig,
+  HAMMER_GESTURE_CONFIG
+} from "@angular/platform-browser";
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   imports: [
@@ -58,7 +64,7 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
     StencilsModule,
     MaterialFileInputModule,
     FlexLayoutModule,
-    ScrollingModule
+    MatTabsModule
   ],
   declarations: [
     AppComponent,
@@ -75,7 +81,9 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
     CustomerOnboardingFormComponent,
     UnderwriterFormComponent,
     UnderwriterTabComponent,
-    SummaryTabComponent
+    SummaryTabComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   providers: [
     PreviewService,
@@ -86,6 +94,10 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
         name: "app",
         source: "resources"
       }
+    },
+    {
+      provide: HAMMER_GESTURE_CONFIG,
+      useClass: HammerGestureConfig
     }
     // { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: "always" } }
   ],
