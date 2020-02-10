@@ -1,3 +1,4 @@
+import { BreakpointObserverService } from "./../breakpoint-observer.service";
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import {
   BreakpointObserver,
@@ -6,17 +7,17 @@ import {
 } from "@angular/cdk/layout";
 
 @Component({
-  selector: "app-underwriter-form",
-  templateUrl: "./underwriter-form.component.html",
-  styleUrls: ["./underwriter-form.component.scss"],
+  selector: "app-contractor-form",
+  templateUrl: "./contractor-form.component.html",
+  styleUrls: ["./contractor-form.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
-export class UnderwriterFormComponent implements OnInit {
+export class ContractorFormComponent implements OnInit {
   constructor(public breakpointObserver: BreakpointObserver) {}
 
   // Instance Variables
   public formData: any = {
-    title: "Underwriter",
+    title: "Contractor",
     logo: "../../assets/Group 1logo.svg"
   };
 
@@ -25,14 +26,8 @@ export class UnderwriterFormComponent implements OnInit {
   public tooltipPosition: string = "below";
 
   public primaryCol: number;
-  public documentsCol: number;
-  public contractorInfoCol: number;
-  public checkboxCol: number;
-  public buttonTopMargin: number;
-  public buttonBottomMargin: number;
 
   public fontSize: number;
-  public spanText: number;
   public formMargin: number;
   public titleMargin: number;
 

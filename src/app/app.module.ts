@@ -38,12 +38,11 @@ import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.co
 import { UnderwriterTabComponent } from "./underwriter-tab/underwriter-tab.component";
 import { SummaryTabComponent } from "./summary-tab/summary-tab.component";
 import { MatTabsModule } from "@angular/material/tabs";
-import {
-  HammerGestureConfig,
-  HAMMER_GESTURE_CONFIG
-} from "@angular/platform-browser";
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
+import { ContractorFormComponent } from './contractor-form/contractor-form.component';
+import { CsrFormComponent } from './csr-form/csr-form.component';
 
 @NgModule({
   imports: [
@@ -83,7 +82,9 @@ import { FooterComponent } from './footer/footer.component';
     UnderwriterTabComponent,
     SummaryTabComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ContractorFormComponent,
+    CsrFormComponent
   ],
   providers: [
     PreviewService,
@@ -94,12 +95,7 @@ import { FooterComponent } from './footer/footer.component';
         name: "app",
         source: "resources"
       }
-    },
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: HammerGestureConfig
     }
-    // { provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: { float: "always" } }
   ],
   bootstrap: [AppComponent]
 })

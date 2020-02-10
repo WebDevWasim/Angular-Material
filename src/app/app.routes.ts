@@ -32,6 +32,8 @@ import { AppLayoutComponent } from "./app-layout/app-layout.component";
 import { FileViewComponent } from "./file-view/file-view.component";
 import { BlobViewComponent } from "./file-view/blob-view.component";
 import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
+import { ContractorFormComponent } from "./contractor-form/contractor-form.component";
+import { CsrFormComponent } from "./csr-form/csr-form.component";
 
 export const appRoutes: Routes = [
   {
@@ -47,6 +49,22 @@ export const appRoutes: Routes = [
     pathMatch: "full"
   },
   {
+    path: "underwriter",
+    component: UnderwriterFormComponent
+  },
+  {
+    path: "customer",
+    component: CustomerOnboardingFormComponent
+  },
+  {
+    path: "contractor",
+    component: ContractorFormComponent
+  },
+  {
+    path: "csr",
+    component: CsrFormComponent
+  },
+  {
     path: "",
     component: AppLayoutComponent,
     children: [
@@ -58,27 +76,30 @@ export const appRoutes: Routes = [
         path: "home",
         component: HomeComponent
       },
-      {
-        path: "customer",
-        component: CustomerOnboardingFormComponent
-      },
-      {
-        path: "forms",
-        component: UnderwriterFormComponent,
-        children: [
-          {
-            path: "underwriter",
-            component: UnderwriterTabComponent,
-            children: [
-              {
-                path: "summary",
-                component: SummaryTabComponent
-              }
-            ]
-          }
-        ]
-      },
-
+      // {
+      //   path: "customer",
+      //   component: CustomerOnboardingFormComponent
+      // },
+      // {
+      //   path: "contractor",
+      //   component: ContractorFormComponent
+      // },
+      // {
+      //   path: "forms",
+      //   component: UnderwriterFormComponent,
+      //   children: [
+      //     {
+      //       path: "underwriter",
+      //       component: UnderwriterTabComponent,
+      //       children: [
+      //         {
+      //           path: "summary",
+      //           component: SummaryTabComponent
+      //         }
+      //       ]
+      //     }
+      //   ]
+      // },
       {
         path: "apps",
         component: AppsComponent,

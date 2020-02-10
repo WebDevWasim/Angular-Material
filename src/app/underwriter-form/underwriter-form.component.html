@@ -1,22 +1,17 @@
 <!-- HEADER -->
-<app-header></app-header>
+<app-header [formData]="formData"></app-header>
 
 <!-- TODO: TAB -->
-
 <div>
-  <mat-tab-group
-    [selectedIndex]="selected"
-    (swipeleft)="swipe($event.type)"
-    (swiperight)="swipe($event.type)"
-  >
-    <!-- <mat-tab label="Search/Task"> Content 1 </mat-tab> -->
+  <mat-tab-group>
+    <mat-tab label="Search/Task"> Content 1 </mat-tab>
 
     <mat-tab label="Underwriter">
       <!-- ======================FIXME:Underwriter==================================== -->
       <app-underwriter-tab></app-underwriter-tab>
       <!-- ====================================================================== -->
     </mat-tab>
-    <!-- <mat-tab label="Review Requests Pending. (pending 0)"> Content 3 </mat-tab> -->
+    <mat-tab label="Review Requests Pending. (pending 0)"> Content 3 </mat-tab>
   </mat-tab-group>
 </div>
 

@@ -75,5 +75,5 @@
 //  Tooltip
 .mat-tooltip {
   @include textStyle(12, 16, 500, $white, #5a5a5a);
-  height: auto;
+  height: auto !important;
 }

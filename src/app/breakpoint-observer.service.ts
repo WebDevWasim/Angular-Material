@@ -1,23 +1,22 @@
-import { Component, OnInit, ViewEncapsulation, Input } from "@angular/core";
+import { Injectable } from "@angular/core";
 import {
   BreakpointObserver,
   Breakpoints,
   BreakpointState
 } from "@angular/cdk/layout";
 
-@Component({
-  selector: "app-header",
-  templateUrl: "./header.component.html",
-  styleUrls: ["./header.component.scss"],
-  encapsulation: ViewEncapsulation.None
+@Injectable({
+  providedIn: "root"
 })
-export class HeaderComponent implements OnInit {
-  @Input() formData: any;
+export class BreakpointObserverService {
   constructor(public breakpointObserver: BreakpointObserver) {}
+
   public isXsmall: boolean;
   public isSmall: boolean;
   public isMedium: boolean;
   public isLarge: boolean;
+
+  // ===============================================
 
   ngOnInit() {
     this.breakpointObserver
@@ -51,5 +50,13 @@ export class HeaderComponent implements OnInit {
           this.isLarge = true;
         }
       });
+  }
+  breakPointStatus() {
+    return {
+      xSmall: this.isXsmall,
+      small: this.isSmall,
+      medium: this.isMedium,
+      large: this.isLarge
+    };
   }
 }
