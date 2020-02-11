@@ -41,8 +41,11 @@ import { MatTabsModule } from "@angular/material/tabs";
 
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
-import { ContractorFormComponent } from './contractor-form/contractor-form.component';
-import { CsrFormComponent } from './csr-form/csr-form.component';
+import { ContractorFormComponent } from "./contractor-form/contractor-form.component";
+import { CsrFormComponent } from "./csr-form/csr-form.component";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { FormComponent } from "./form/form.component";
+import { ApplicantDetailsComponent } from "./applicant-details/applicant-details.component";
 
 @NgModule({
   imports: [
@@ -63,7 +66,8 @@ import { CsrFormComponent } from './csr-form/csr-form.component';
     StencilsModule,
     MaterialFileInputModule,
     FlexLayoutModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSidenavModule
   ],
   declarations: [
     AppComponent,
@@ -84,7 +88,9 @@ import { CsrFormComponent } from './csr-form/csr-form.component';
     HeaderComponent,
     FooterComponent,
     ContractorFormComponent,
-    CsrFormComponent
+    CsrFormComponent,
+    FormComponent,
+    ApplicantDetailsComponent
   ],
   providers: [
     PreviewService,
