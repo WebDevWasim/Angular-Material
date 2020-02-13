@@ -34,25 +34,20 @@ import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/cust
 // import { MAT_LABEL_GLOBAL_OPTIONS } from "@angular/material";
 import { MaterialFileInputModule } from "ngx-material-file-input";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
-import { UnderwriterTabComponent } from "./underwriter-tab/underwriter-tab.component";
-import { SummaryTabComponent } from "./summary-tab/summary-tab.component";
 import { MatTabsModule } from "@angular/material/tabs";
 
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
-import { ContractorFormComponent } from "./contractor-form/contractor-form.component";
-import { CsrFormComponent } from "./csr-form/csr-form.component";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { FormComponent } from "./form/form.component";
 import { ApplicantDetailsComponent } from "./applicant-details/applicant-details.component";
-import { SuperSummaryComponent } from './super-summary/super-summary.component';
-import { LoanDetailsComponent } from './loan-details/loan-details.component';
-import { ApplicantComponent } from './applicant/applicant.component';
-import { RateComponent } from './rate/rate.component';
-import { CalculatorOptionsComponent } from './calculator-options/calculator-options.component';
-import { DecisionEngineComponent } from './decision-engine/decision-engine.component';
-import { PricingTermsComponent } from './pricing-terms/pricing-terms.component';
+import { SuperSummaryComponent } from "./super-summary/super-summary.component";
+import { LoanDetailsComponent } from "./loan-details/loan-details.component";
+import { ApplicantComponent } from "./applicant/applicant.component";
+import { RateComponent } from "./rate/rate.component";
+import { CalculatorOptionsComponent } from "./calculator-options/calculator-options.component";
+import { DecisionEngineComponent } from "./decision-engine/decision-engine.component";
+import { PricingTermsComponent } from "./pricing-terms/pricing-terms.component";
 
 @NgModule({
   imports: [
@@ -89,13 +84,8 @@ import { PricingTermsComponent } from './pricing-terms/pricing-terms.component';
     FileViewComponent,
     BlobViewComponent,
     CustomerOnboardingFormComponent,
-    UnderwriterFormComponent,
-    UnderwriterTabComponent,
-    SummaryTabComponent,
     HeaderComponent,
     FooterComponent,
-    ContractorFormComponent,
-    CsrFormComponent,
     FormComponent,
     ApplicantDetailsComponent,
     SuperSummaryComponent,

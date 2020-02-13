@@ -30,9 +30,6 @@ import { StartProcessComponent } from "./start-process/start-process.component";
 import { AppLayoutComponent } from "./app-layout/app-layout.component";
 import { FileViewComponent } from "./file-view/file-view.component";
 import { BlobViewComponent } from "./file-view/blob-view.component";
-import { UnderwriterFormComponent } from "./underwriter-form/underwriter-form.component";
-import { ContractorFormComponent } from "./contractor-form/contractor-form.component";
-import { CsrFormComponent } from "./csr-form/csr-form.component";
 
 export const appRoutes: Routes = [
   {
@@ -47,10 +44,7 @@ export const appRoutes: Routes = [
     outlet: "overlay",
     pathMatch: "full"
   },
-  {
-    path: "underwriter",
-    component: UnderwriterFormComponent
-  },
+
   {
     path: "form",
     component: FormComponent
@@ -59,14 +53,7 @@ export const appRoutes: Routes = [
     path: "customer",
     component: CustomerOnboardingFormComponent
   },
-  {
-    path: "contractor",
-    component: ContractorFormComponent
-  },
-  {
-    path: "csr",
-    component: CsrFormComponent
-  },
+
   {
     path: "",
     component: AppLayoutComponent,
@@ -79,30 +66,7 @@ export const appRoutes: Routes = [
         path: "home",
         component: HomeComponent
       },
-      // {
-      //   path: "customer",
-      //   component: CustomerOnboardingFormComponent
-      // },
-      // {
-      //   path: "contractor",
-      //   component: ContractorFormComponent
-      // },
-      // {
-      //   path: "forms",
-      //   component: UnderwriterFormComponent,
-      //   children: [
-      //     {
-      //       path: "underwriter",
-      //       component: UnderwriterTabComponent,
-      //       children: [
-      //         {
-      //           path: "summary",
-      //           component: SummaryTabComponent
-      //         }
-      //       ]
-      //     }
-      //   ]
-      // },
+
       {
         path: "apps",
         component: AppsComponent,
