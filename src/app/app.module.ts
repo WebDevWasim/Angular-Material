@@ -46,6 +46,13 @@ import { CsrFormComponent } from "./csr-form/csr-form.component";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { FormComponent } from "./form/form.component";
 import { ApplicantDetailsComponent } from "./applicant-details/applicant-details.component";
+import { SuperSummaryComponent } from './super-summary/super-summary.component';
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { ApplicantComponent } from './applicant/applicant.component';
+import { RateComponent } from './rate/rate.component';
+import { CalculatorOptionsComponent } from './calculator-options/calculator-options.component';
+import { DecisionEngineComponent } from './decision-engine/decision-engine.component';
+import { PricingTermsComponent } from './pricing-terms/pricing-terms.component';
 
 @NgModule({
   imports: [
@@ -90,7 +97,14 @@ import { ApplicantDetailsComponent } from "./applicant-details/applicant-details
     ContractorFormComponent,
     CsrFormComponent,
     FormComponent,
-    ApplicantDetailsComponent
+    ApplicantDetailsComponent,
+    SuperSummaryComponent,
+    LoanDetailsComponent,
+    ApplicantComponent,
+    RateComponent,
+    CalculatorOptionsComponent,
+    DecisionEngineComponent,
+    PricingTermsComponent
   ],
   providers: [
     PreviewService,

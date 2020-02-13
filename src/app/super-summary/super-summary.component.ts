@@ -7,32 +7,32 @@ import {
 } from "@angular/cdk/layout";
 
 @Component({
-  selector: "app-applicant-details",
-  templateUrl: "./applicant-details.component.html",
-  styleUrls: ["./applicant-details.component.scss"],
+  selector: "app-super-summary",
+  templateUrl: "./super-summary.component.html",
+  styleUrls: ["./super-summary.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
-export class ApplicantDetailsComponent implements OnInit {
+export class SuperSummaryComponent implements OnInit {
   public formName: any;
   constructor(
-    public breakpointObserver: BreakpointObserver,
-    public role: RoleService
+    public role: RoleService,
+    public breakpointObserver: BreakpointObserver
   ) {}
 
-  // Instance Variables
   public gutterSize: number = 50;
-  public rowHeight: number = 60;
+  public rowHeight: number;
+
+  public applicantRow: number;
+  public calculatorRow: number;
+  public pricingRow: number;
+  public decisionRow: number;
+  public rateRow: number;
+
   public tooltipPosition: string = "below";
 
   public primaryCol: number;
-  public documentsCol: number;
-  public contractorInfoCol: number;
-  public checkboxCol: number;
-  public buttonTopMargin: number;
-  public buttonBottomMargin: number;
 
   public fontSize: number;
-  public spanText: number;
   public formMargin: number;
   public titleMargin: number;
 
@@ -44,6 +44,7 @@ export class ApplicantDetailsComponent implements OnInit {
   ngOnInit() {
     this.formName = this.role.getFormDetails().formName;
 
+    // Breakpoints
     this.breakpointObserver
       .observe([
         Breakpoints.XSmall,
@@ -62,6 +63,7 @@ export class ApplicantDetailsComponent implements OnInit {
           this.primaryCol = 1;
 
           this.fontSize = 28;
+
           this.formMargin = 30;
           this.titleMargin = 50;
         } else if (state.breakpoints[Breakpoints.Small]) {
@@ -71,6 +73,7 @@ export class ApplicantDetailsComponent implements OnInit {
           this.isLarge = false;
 
           this.primaryCol = 2;
+
           this.fontSize = 30;
           this.formMargin = 65;
           this.titleMargin = 60;
@@ -98,7 +101,31 @@ export class ApplicantDetailsComponent implements OnInit {
           this.titleMargin = 60;
         }
       });
+
+    // TODO: Set Height Based on Form amd breakpoint
+
+    // FIXME: Line Maneger
+    if (this.formName.lineManager) {
+      this.rowHeight = 1;
+
+      this.applicantRow = 5;
+      this.calculatorRow = 12;
+      this.pricingRow = 20;
+      this.decisionRow = 7;
+      this.rateRow = 7;
+    } else if (this.formName.underwriter) {
+      this.rowHeight = 2;
+
+      this.applicantRow = 6;
+      this.calculatorRow = 8;
+      this.decisionRow = 8;
+      this.rateRow = 3;
+    } else if (this.formName.csr) {
+      this.rowHeight = 2;
+      this.applicantRow = 8;
+    }
   }
+
   setMyStyles() {
     return {
       "font-size": `${this.fontSize}px`,

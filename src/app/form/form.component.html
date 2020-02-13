@@ -1,3 +1,11 @@
-<p>
-  form works!
-</p>
+<app-header></app-header>
+<form
+  #renewForm="ngForm"
+  (ngSubmit)="submitRenewForm(renewForm)"
+  style="margin-bottom: 70px;"
+>
+  <app-applicant-details></app-applicant-details>
+  <app-super-summary *ngIf="!formName.contractor"></app-super-summary>
+  <app-loan-details *ngIf="formName.contractor"></app-loan-details>
+</form>
+<app-footer></app-footer>

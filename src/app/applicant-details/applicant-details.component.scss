@@ -3,7 +3,7 @@
 @import "../../tabDesign";
 
 // Main Form
-#form {
+#applicantDetails {
   @include matFigure(formApplicationTile, center, flex-start);
   @include matFigure(formButtonsTile, center, flex-end);
   h1 {

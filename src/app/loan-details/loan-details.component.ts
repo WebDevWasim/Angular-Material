@@ -7,32 +7,26 @@ import {
 } from "@angular/cdk/layout";
 
 @Component({
-  selector: "app-applicant-details",
-  templateUrl: "./applicant-details.component.html",
-  styleUrls: ["./applicant-details.component.scss"],
+  selector: "app-loan-details",
+  templateUrl: "./loan-details.component.html",
+  styleUrls: ["./loan-details.component.scss"],
   encapsulation: ViewEncapsulation.None
 })
-export class ApplicantDetailsComponent implements OnInit {
-  public formName: any;
+export class LoanDetailsComponent implements OnInit {
   constructor(
     public breakpointObserver: BreakpointObserver,
     public role: RoleService
   ) {}
 
   // Instance Variables
+  public formName: any;
   public gutterSize: number = 50;
   public rowHeight: number = 60;
   public tooltipPosition: string = "below";
 
   public primaryCol: number;
-  public documentsCol: number;
-  public contractorInfoCol: number;
-  public checkboxCol: number;
-  public buttonTopMargin: number;
-  public buttonBottomMargin: number;
 
   public fontSize: number;
-  public spanText: number;
   public formMargin: number;
   public titleMargin: number;
 
@@ -43,7 +37,6 @@ export class ApplicantDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.formName = this.role.getFormDetails().formName;
-
     this.breakpointObserver
       .observe([
         Breakpoints.XSmall,

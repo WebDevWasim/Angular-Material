@@ -2,11 +2,11 @@ import { RoleService } from "./../role.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: "app-form",
-  templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.scss"]
+  selector: "app-calculator-options",
+  templateUrl: "./calculator-options.component.html",
+  styleUrls: ["./calculator-options.component.scss"]
 })
-export class FormComponent implements OnInit {
+export class CalculatorOptionsComponent implements OnInit {
   public formName: any;
   constructor(public role: RoleService) {}
 

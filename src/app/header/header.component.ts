@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation, Input } from "@angular/core";
+import { RoleService } from "./../role.service";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import {
   BreakpointObserver,
   Breakpoints,
@@ -12,14 +13,18 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
-  @Input() formData: any;
-  constructor(public breakpointObserver: BreakpointObserver) {}
+  constructor(
+    public breakpointObserver: BreakpointObserver,
+    public role: RoleService
+  ) {}
   public isXsmall: boolean;
   public isSmall: boolean;
   public isMedium: boolean;
   public isLarge: boolean;
+  public formData: any;
 
   ngOnInit() {
+    this.formData = this.role.getFormDetails().formData;
     this.breakpointObserver
       .observe([
         Breakpoints.XSmall,

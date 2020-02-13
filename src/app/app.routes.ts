@@ -1,6 +1,4 @@
-import { ApplicantDetailsComponent } from "./applicant-details/applicant-details.component";
-import { SummaryTabComponent } from "./summary-tab/summary-tab.component";
-import { UnderwriterTabComponent } from "./underwriter-tab/underwriter-tab.component";
+import { FormComponent } from "./form/form.component";
 import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/customer-onboarding-form.component";
 /*!
  * @license
@@ -54,8 +52,8 @@ export const appRoutes: Routes = [
     component: UnderwriterFormComponent
   },
   {
-    path: "applicant",
-    component: ApplicantDetailsComponent
+    path: "form",
+    component: FormComponent
   },
   {
     path: "customer",
