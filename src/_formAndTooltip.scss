@@ -7,7 +7,7 @@
     font-size: 14px;
   }
   .mat-form-field-label {
-    @include textStyle(14, 21, 500, $labelDark);
+    @include textStyle(14, 21, 900, $labelDark);
   }
   .mat-form-field-underline {
     background-color: $green;
@@ -57,7 +57,7 @@
 }
 
 .mat-checkbox-layout .mat-checkbox-label {
-  @include textStyle(14, 21, 500, $labelDark);
+  @include textStyle(14, 21, 900, $labelDark);
   margin-top: 29px;
   margin-left: 23px;
 }

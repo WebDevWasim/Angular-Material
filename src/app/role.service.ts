@@ -10,10 +10,10 @@ export class RoleService {
   };
 
   public formName = {
-    underwriter: false,
+    underwriter: true,
     csr: false,
     lineManager: false,
-    contractor: true
+    contractor: false
   };
 
   constructor() {

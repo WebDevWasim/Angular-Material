@@ -1,0 +1,25 @@
+@import "../../variablesAndMixins";
+
+.mat-sidenav-container {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+mat-drawer {
+  background-color: $headingDark !important;
+  width: 280px;
+}
+
+mat-drawer-content {
+  // height: auto;
+  background-color: $white;
+}
+
+// .mat-drawer-backdrop.mat-drawer-shown {
+//   visibility: hidden !important;
+// }
+
+#end {
+  height: 25px;
+  background: $green;
+}

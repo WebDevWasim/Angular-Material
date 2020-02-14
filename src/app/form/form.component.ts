@@ -1,10 +1,11 @@
 import { RoleService } from "./../role.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: "app-form",
   templateUrl: "./form.component.html",
-  styleUrls: ["./form.component.scss"]
+  styleUrls: ["./form.component.scss"],
+  encapsulation: ViewEncapsulation.None
 })
 export class FormComponent implements OnInit {
   public formName: any;

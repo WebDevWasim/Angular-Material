@@ -48,6 +48,7 @@ import { RateComponent } from "./rate/rate.component";
 import { CalculatorOptionsComponent } from "./calculator-options/calculator-options.component";
 import { DecisionEngineComponent } from "./decision-engine/decision-engine.component";
 import { PricingTermsComponent } from "./pricing-terms/pricing-terms.component";
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   imports: [
@@ -94,7 +95,8 @@ import { PricingTermsComponent } from "./pricing-terms/pricing-terms.component";
     RateComponent,
     CalculatorOptionsComponent,
     DecisionEngineComponent,
-    PricingTermsComponent
+    PricingTermsComponent,
+    SidenavComponent
   ],
   providers: [
     PreviewService,

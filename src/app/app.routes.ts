@@ -1,3 +1,4 @@
+import { SidenavComponent } from "./sidenav/sidenav.component";
 import { FormComponent } from "./form/form.component";
 import { CustomerOnboardingFormComponent } from "./customer-onboarding-form/customer-onboarding-form.component";
 /*!
@@ -53,7 +54,10 @@ export const appRoutes: Routes = [
     path: "customer",
     component: CustomerOnboardingFormComponent
   },
-
+  {
+    path: "sidenav",
+    component: SidenavComponent
+  },
   {
     path: "",
     component: AppLayoutComponent,
