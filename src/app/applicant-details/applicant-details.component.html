@@ -299,7 +299,7 @@
       </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile class="checkBoxTile" *ngIf="formName.underwriter">
-      <mat-checkbox>Warning Ok </mat-checkbox>
+      <mat-checkbox disableRipple>Warning Ok </mat-checkbox>
     </mat-grid-tile>
     <mat-grid-tile
       class="checkBoxTile"
@@ -308,6 +308,7 @@
       <mat-checkbox
         matTooltip="Check this box to override the exceptions if any. If the application has been marked as ‘Override OK’ then the system would allow you to change the application sta­tus.(check box)"
         [matTooltipPosition]="tooltipPosition"
+        disableRipple
         >Override Ok
       </mat-checkbox>
     </mat-grid-tile>

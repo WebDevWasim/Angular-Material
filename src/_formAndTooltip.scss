@@ -52,14 +52,17 @@
 .mat-checkbox-checked.mat-accent .mat-checkbox-background,
 .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
   background-color: $lightGreen;
-  height: 29px;
-  width: 29px;
 }
 
 .mat-checkbox-layout .mat-checkbox-label {
   @include textStyle(14, 21, 900, $labelDark);
-  margin-top: 29px;
-  margin-left: 23px;
+  margin-left: 14px;
+  margin-top: 19px;
+}
+
+.mat-checkbox-inner-container {
+  height: 29px !important;
+  width: 29px !important;
 }
 
 // Left Aligning Checkbox Tile

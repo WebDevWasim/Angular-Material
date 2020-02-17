@@ -1,11 +1,55 @@
 <app-header></app-header>
-<mat-drawer-container class="mat-sidenav-container" autosize>
-  <mat-drawer #drawer mode="side" opened>
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
-  </mat-drawer>
 
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened #drawer>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Menu 1
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list role="list">
+          <mat-list-item role="listitem">Item 1</mat-list-item>
+          <mat-list-item role="listitem">Item 2</mat-list-item>
+          <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Menu 2
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list dense>
+          <mat-list-item> Pepper </mat-list-item>
+          <mat-list-item> Salt </mat-list-item>
+          <mat-list-item> Paprika </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Menu 3
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Menu 4
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Menu 5
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-drawer>
   <mat-drawer-content>
     <app-form></app-form>
   </mat-drawer-content>
