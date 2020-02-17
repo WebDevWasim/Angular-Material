@@ -1,13 +1,12 @@
-
 module.exports = {
   "/alfresco": {
-    "target": "http://localhost:8080",
-    "secure": false,
-    "changeOrigin": true
+    target: "http://172.16.0.44:8080",
+    secure: false,
+    changeOrigin: true
   },
   "/activiti-app": {
-    "target": "http://localhost:9999",
-    "secure": false,
-    "changeOrigin": true
+    target: "http://172.16.0.44:8090",
+    secure: false,
+    changeOrigin: true
   }
 };

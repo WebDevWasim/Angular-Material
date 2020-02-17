@@ -258,6 +258,17 @@ $white: #fff;
   }
 }
 
+// Calender Design
+/deep/ .mat-calendar-body-selected {
+  color: $white !important;
+  border: none !important;
+  background-color: $lightGreen !important;
+}
+
+/deep/ .mat-calendar-body-today {
+  border: 1px solid $green !important;
+}
+
 // ========================================== Footer
 #footer {
   #footerDesktop {

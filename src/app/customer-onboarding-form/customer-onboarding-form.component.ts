@@ -4,6 +4,14 @@ import {
   Breakpoints,
   BreakpointState
 } from "@angular/cdk/layout";
+import {
+  ProcessService,
+  ProcessInstance,
+  ProcessInstanceVariable,
+  ProcessDefinitionRepresentation,
+  ProcessFilterParamRepresentationModel,
+  TaskDetailsModel
+} from "@alfresco/adf-process-services";
 
 @Component({
   selector: "app-customer-onboarding-form",
@@ -11,7 +19,10 @@ import {
   styleUrls: ["./customer-onboarding-form.component.scss"]
 })
 export class CustomerOnboardingFormComponent implements OnInit {
-  constructor(public breakpointObserver: BreakpointObserver) {}
+  constructor(
+    public breakpointObserver: BreakpointObserver,
+    private processService: ProcessService
+  ) {}
 
   // Instance Variables
   public gutterSize: number = 50;
@@ -131,5 +142,34 @@ export class CustomerOnboardingFormComponent implements OnInit {
       "margin-top": `${this.titleMargin}px`,
       "margin-bottom": `${this.titleMargin - 20}px`
     };
+  }
+
+  submitCustomerForm(customerForm) {
+    const formValues: object = customerForm.value;
+    let KeysArr = Object.keys(formValues);
+    let arr = [];
+    for (let key of KeysArr) {
+      let obj = {
+        name: key,
+        value: formValues[key]
+      };
+      arr.push(obj);
+    }
+
+    const processDefinitionId = "test";
+    const name = "test";
+    const variables: ProcessInstanceVariable[] = arr;
+    this.processService
+      .startProcess(processDefinitionId, name, null, null, variables)
+      .subscribe(
+        (processInstance: ProcessInstance) => {
+          console.log("ProcessInstance: ", processInstance);
+        },
+        error => {
+          console.log("Error: ", error);
+        }
+      );
+
+    console.log(variables);
   }
 }

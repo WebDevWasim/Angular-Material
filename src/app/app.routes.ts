@@ -54,50 +54,74 @@ export const appRoutes: Routes = [
     path: "customer",
     component: CustomerOnboardingFormComponent
   },
-  {
-    path: "sidenav",
-    component: SidenavComponent
-  },
+
   {
     path: "",
-    component: AppLayoutComponent,
+    component: SidenavComponent,
     children: [
       {
         path: "",
-        component: CustomerOnboardingFormComponent
+        redirectTo: "underwriter",
+        pathMatch: "full"
       },
       {
-        path: "home",
-        component: HomeComponent
-      },
-
-      {
-        path: "apps",
-        component: AppsComponent,
-        canActivate: [AuthGuardBpm]
+        path: "csr",
+        component: FormComponent
       },
       {
-        path: "apps/:appId/tasks",
-        component: TasksComponent,
-        canActivate: [AuthGuardBpm]
+        path: "underwriter",
+        component: FormComponent
       },
       {
-        path: "apps/:appId/tasks/:taskId",
-        component: TaskDetailsComponent,
-        canActivate: [AuthGuardBpm]
+        path: "linemanager",
+        component: FormComponent
       },
       {
-        path: "apps/:appId/start-process",
-        component: StartProcessComponent,
-        canActivate: [AuthGuardBpm]
-      },
-      {
-        path: "documentlist",
-        component: DocumentlistComponent,
-        canActivate: [AuthGuardEcm]
+        path: "contractor",
+        component: FormComponent
       }
     ]
   },
+  // {
+  //   path: "",
+  //   component: AppLayoutComponent,
+  //   children: [
+  //     {
+  //       path: "",
+  //       component: CustomerOnboardingFormComponent
+  //     },
+  //     {
+  //       path: "home",
+  //       component: HomeComponent
+  //     },
+
+  //     {
+  //       path: "apps",
+  //       component: AppsComponent,
+  //       canActivate: [AuthGuardBpm]
+  //     },
+  //     {
+  //       path: "apps/:appId/tasks",
+  //       component: TasksComponent,
+  //       canActivate: [AuthGuardBpm]
+  //     },
+  //     {
+  //       path: "apps/:appId/tasks/:taskId",
+  //       component: TaskDetailsComponent,
+  //       canActivate: [AuthGuardBpm]
+  //     },
+  //     {
+  //       path: "apps/:appId/start-process",
+  //       component: StartProcessComponent,
+  //       canActivate: [AuthGuardBpm]
+  //     },
+  //     {
+  //       path: "documentlist",
+  //       component: DocumentlistComponent,
+  //       canActivate: [AuthGuardEcm]
+  //     }
+  //   ]
+  // },
   {
     path: "login",
     component: LoginComponent

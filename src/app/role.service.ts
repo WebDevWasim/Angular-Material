@@ -34,4 +34,15 @@ export class RoleService {
       formData: this.formData
     };
   }
+
+  setFormRole(role) {
+    let keysArr = Object.keys(this.formName);
+    let filterArr = keysArr.filter(item => {
+      return item !== role;
+    });
+    this.formName[role] = true;
+    for (let keys of filterArr) {
+      this.formName[keys] = false;
+    }
+  }
 }

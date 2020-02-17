@@ -1,3 +1,4 @@
+import { RoleService } from "./../role.service";
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 
 @Component({
@@ -7,7 +8,11 @@ import { Component, OnInit, ViewEncapsulation } from "@angular/core";
   encapsulation: ViewEncapsulation.None
 })
 export class SidenavComponent implements OnInit {
-  constructor() {}
+  constructor(private roleService: RoleService) {}
 
   ngOnInit() {}
+
+  setRole(role) {
+    this.roleService.setFormRole(role);
+  }
 }
