@@ -1,6 +1,122 @@
 {
-  "header": {
-    "title": "Formulario de incorporación del cliente"
+  "CUSTOMER": {
+    "customerForm": "Formulario de incorporación del cliente",
+    "primaryHeading": {
+      "name": "Información primaria",
+      "labels": {
+        "firstName": "Nombre de pila",
+        "lastName": "Apellido",
+        "mobileNumber": "Número de teléfono móvil",
+        "emailID": "Identificación de correo",
+        "birthDate": "Fecha de nacimiento",
+        "socialNumber": "Número de seguridad social"
+      }
+    },
+    "incomeHeading": {
+      "name": "Ingresos y otra información",
+      "labels": {
+        "income": "Ingresos",
+        "sourceIncomeDropdown": {
+          "label": "Fuente de ingreso",
+          "options": {
+            "option1": "Opción 1",
+            "option2": "Opción 2",
+            "option3": "Opción 3"
+          }
+        },
+        "peopleLiveDropdown": {
+          "label": "¿Cuantas personas viven en tu casa?",
+          "options": {
+            "option1": "Opción 1",
+            "option2": "Opción 2",
+            "option3": "Opción 3"
+          }
+        },
+        "liveSameAddress": "¿Vives en la misma dirección?"
+      }
+    },
+    "documentsHeading": {
+      "name": "Documentos",
+      "spanText": "(Documentación mínima para una calificación previa más rápida)",
+      "labels": {
+        "drivingLicence": {
+          "label": "Licencia de conducir",
+          "tooltip": "Cargar licencia de conducir válida"
+        },
+        "bankStatement": {
+          "label": "Extracto de cuenta",
+          "tooltip": "Cargar extracto bancario en los últimos 3 meses"
+        },
+        "titleDeed": {
+          "label": "Título de propiedad",
+          "tooltip": "Subir"
+        },
+        "creditReport": {
+          "label": "Reporte de crédito",
+          "tooltip": "Subir"
+        },
+        "taxReturns": {
+          "label": "Declaraciones de impuestos",
+          "tooltip": "Cargue las últimas declaraciones de impuestos"
+        },
+        "propertyValue": {
+          "label": "El valor de la propiedad",
+          "tooltip": "Subir copia del formulario de tasación de propiedad"
+        },
+        "utilityBill": {
+          "label": "Factura de servicios públicos",
+          "tooltip": "Cargue la última factura de servicios públicos"
+        }
+      }
+    },
+    "contractorHeading": {
+      "name": "Información del contratista",
+      "labels": {
+        "renewContractorDropdown": {
+          "label": "Solicitar con renovar contratista (o)",
+          "options": {
+            "option1": "Opción 1",
+            "option2": "Opción 2",
+            "option3": "Opción 3"
+          }
+        },
+        "nonRenewContractor": {
+          "label": "Solicitar con contratista no renovado",
+          "placeholder": "Ingresar manualmente"
+        }
+      }
+    },
+    "financingHeading": {
+      "name": "Detalles de financiamiento",
+      "labels": {
+        "solar": "Financiamiento de paneles solares",
+        "windows": "Financiamiento de Ventanas y Puertas",
+        "roofing": "Techos y financiamiento de reemplazo de techos",
+        "landscaping": "Paisajismo y Financiamiento de Césped",
+        "hurricane": "Financiamiento de Protección contra Huracanes",
+        "earthquake": "Financiamiento de protección contra terremotos"
+      }
+    },
+    "termsHeading": {
+      "name": "Términos y condiciones",
+      "texts": {
+        "text1": "Consentimiento para hacer negocios electrónicamente",
+        "text2": "Divulgación y consentimiento",
+        "text3": "- Entiendo que las siguientes revelaciones son requeridas por la Ley Federal de Firmas Electrónicas en el Comercio Global y Nacional (“ESIGN”). Son necesarios para enviar mi solicitud de crédito electrónicamente; Confirmo mi consentimiento para estas divulgaciones de ESIGN haciendo clic en “He revisado todo este Consentimiento y Autorización, le autorizo ​​a procesar mi Solicitud de financiamiento y doy mi consentimiento para hacer negocios electrónicamente”. abajo.",
+        "text4": "Acuse de recibo y autorización",
+        "text5": "- Soy el propietario del registro de la propiedad que figura en la Solicitud, que certifico es mi residencia principal; cualquier información que le proporcione es verdadera y completa; De conformidad con la Ley federal de informes justos de crédito, le autorizo ​​a obtener informes de los consumidores de las agencias de informes de los consumidores en relación con mi Solicitud, incluida la información sobre mis ingresos y mi situación laboral;",
+        "text6": "- Entiendo que, en algunas circunstancias, puedo estar sujeto a múltiples consultas de informes del consumidor para determinar mi elegibilidad potencial;",
+        "text7": "- Le avisaré de cualquier cambio importante en mi situación financiera durante el proceso de solicitud y el plazo de la financiación;",
+        "text8": "- Le autorizo ​​a proporcionar el estado de mi solicitud a mi contratista; y",
+        "text9": "- Le autorizo ​​a llamar a cualquier número de teléfono que proporcione y entiendo que puedo incurrir en un cargo por los servicios de telecomunicaciones, inalámbricos o de Internet y que no tiene ninguna responsabilidad por dichos cargos.",
+        "text10": "- Entiendo que el financiamiento está sujeto a aprobación y pueden aplicarse ciertas restricciones.",
+        "text11": "concent a la solicitud de envío electrónico",
+        "text12": "- Al hacer clic en “He revisado todo este Consentimiento y Autorización, lo autorizo ​​a procesar mi Solicitud de financiamiento y doy mi consentimiento para hacer negocios electrónicamente”. a continuación, por la presente firmo electrónicamente esta Solicitud de financiamiento y consiento afirmativamente y acepto que mi firma electrónica en esta Solicitud de financiamiento tiene el mismo efecto que si la hubiera firmado manualmente.",
+        "checkboxLabel": "He revisado todo este Consentimiento y Autorización, lo autorizo ​​a procesar mi Solicitud de financiamiento y me concentro en hacer negocios electrónicamente."
+      }
+    },
+    "applyBtn": "Aplicar",
+    "contact": "Contacta con nosotras"
   },
   "APP": {
     "INFO_DRAWER": {

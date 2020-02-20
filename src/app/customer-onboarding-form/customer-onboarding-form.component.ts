@@ -10,6 +10,7 @@ import {
   ProcessInstanceVariable
 } from "@alfresco/adf-process-services";
 import { TranslateService } from "@ngx-translate/core";
+import config from "../../assets/config.json";
 
 @Component({
   selector: "app-customer-onboarding-form",
@@ -25,6 +26,7 @@ export class CustomerOnboardingFormComponent implements OnInit {
 
   // Instance Variables
   private selectedLanguage: string = "en";
+  public imageSources = config;
 
   public gutterSize: number = 50;
   public rowHeight: number = 65;
