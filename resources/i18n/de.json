@@ -1,4 +1,7 @@
 {
+  "header": {
+    "title": "Onboarding-Formular für Kunden"
+  },
   "APP": {
     "INFO_DRAWER": {
       "TITLE": "Details",

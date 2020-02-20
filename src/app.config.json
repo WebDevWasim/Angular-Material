@@ -6,7 +6,7 @@
   "application": {
     "name": "Alfresco ADF Application"
   },
-  "locale": "en",
+
   "languages": [
     {
       "key": "en",

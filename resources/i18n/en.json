@@ -1,4 +1,124 @@
 {
+  "CUSTOMER": {
+    "customerForm": "Customer Onboarding Form",
+    "primaryHeading": {
+      "name": "Primary Information",
+      "labels": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "mobileNumber": "Mobile Number",
+        "emailID": "Email ID",
+        "birthDate": "Birth Date",
+        "socialNumber": "Social Security Number"
+      }
+    },
+    "incomeHeading": {
+      "name": "Income & Other Information",
+      "labels": {
+        "income": "Income",
+        "sourceIncomeDropdown": {
+          "label": "Source of Income",
+          "options": {
+            "option1": "option 1",
+            "option2": "option 2",
+            "option3": "option 3"
+          }
+        },
+        "peopleLiveDropdown": {
+          "label": "How many people live in your house?",
+          "options": {
+            "option1": "option 1",
+            "option2": "option 2",
+            "option3": "option 3"
+          }
+        },
+        "liveSameAddress": "Do you live at the same address"
+      }
+    },
+    "documentsHeading": {
+      "name": "Documents",
+      "spanText": "(Minimal Documentation for Faster Pre Qualification)",
+      "labels": {
+        "drivingLicence": {
+          "label": "Driving Licence",
+          "tooltip": "Upload valid Driving license"
+        },
+        "bankStatement": {
+          "label": "Bank Statement",
+          "tooltip": "Upload Bank statement within last 3 months"
+        },
+        "titleDeed": {
+          "label": "Title Deed",
+          "tooltip": "Upload"
+        },
+        "creditReport": {
+          "label": "Credit Report",
+          "tooltip": "Upload"
+        },
+        "taxReturns": {
+          "label": "Tax Returns",
+          "tooltip": "Upload latest Tax returns"
+        },
+        "propertyValue": {
+          "label": "Property Value",
+          "tooltip": "Upload copy of property appraisal form"
+        },
+        "utilityBill": {
+          "label": "Utility Bill",
+          "tooltip": "Upload latest utility bill"
+        }
+      }
+    },
+    "contractorHeading": {
+      "name": "Contractor Information",
+      "labels": {
+        "renewContractorDropdown": {
+          "label": "Apply with Renew Contractor (or)",
+          "options": {
+            "option1": "option 1",
+            "option2": "option 2",
+            "option3": "option 3"
+          }
+        },
+        "nonRenewContractor": {
+          "label": "Apply with Non Renew Contractor",
+          "placeholder": "Enter Manually"
+        }
+      }
+    },
+    "financingHeading": {
+      "name": "Financing Details",
+      "labels": {
+        "solar": "Solar Panel Financing",
+        "windows": "Windows and Doors Financing",
+        "roofing": "Roofing and Roof replacement Financing",
+        "landscaping": "Landscaping and Turf Financing",
+        "hurricane": "Hurricane Protection Financing",
+        "earthquake": "Earthquake Protection Financing"
+      }
+    },
+    "termsHeading": {
+      "name": "Terms & Conditions",
+      "texts": {
+        "text1": "Consent to do busineess electronically",
+        "text2": "Disclosure and Consent",
+        "text3": "- I understand that the following disclosures are required by the federal Electronic Signatures in Global and National Commerce Act (“ESIGN”). They are necessary to submit my credit application electronically; I confirm my consent to these ESIGN disclosures by clicking “I have reviewed this entire Consent and Authorization, I authorize You to process my Application for financing, and I consent to do business electronically.” below.",
+        "text4": "Acknowledgment and Authorization",
+        "text5": "- I am the record owner of the property listed in the Application, which I certify is my primary residence; any information I furnish to You is true and complete; Pursuant to the federal Fair Credit Reporting Act, I authorize You to obtain consumer reports from consumer reporting agencies in connection with my Application, including information on my income and employment status;",
+        "text6": "- I understand in some circumstances I may be subject to multiple consumer reporting inquiries to determine my potential eligibility;",
+        "text7": "- I will advise You of any material changes in my financial condition during the Application process and term of the financing;",
+        "text8": "- I authorize You to provide the status of my Application to my contractor; and",
+        "text9": "- I authorize You to call any telephone number I provide and understand that I may incur a charge from the telecommunications, wireless or Internet services and that You have no liability for such charges.",
+        "text10": "- I understand financing is subject to approval and certain restrictions may apply.",
+        "text11": "concent to Electronic Submission Application",
+        "text12": "- By clicking “I have reviewed this entire Consent and Authorization, I authorize You to process my Application for financing, and I consent to do business electronically.” below, I hereby electronically sign this Application for financing and I affirmatively consent and agree that my electronic signature on this Application for financing has the same effect as if I had signed it manually.",
+        "checkboxLabel": "I have reviewed this entire Consent and Authorization, I authorize You to process my Application for financing, and I concent to do business electronically."
+      }
+    },
+    "applyBtn": "Apply",
+    "contact": "Contact Us"
+  },
+
   "APP": {
     "INFO_DRAWER": {
       "TITLE": "Details",

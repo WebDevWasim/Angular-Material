@@ -1,0 +1,14 @@
+{
+  "headerImages": {
+    "leftLogo": "./assets/Group 1logo.svg",
+    "rightLogos": {
+      "rightTile1": "./assets/California first logowhite.svg",
+      "rightTile2": "./assets/Renew pace logowhite.svg"
+    }
+  },
+  "upload-icon": "./assets/Line 3.png",
+  "footer-images": {
+    "leftTile": "./assets/Renew logo.svg",
+    "rightTile": "./assets/Group 4.svg"
+  }
+}

@@ -7,11 +7,9 @@ import {
 import {
   ProcessService,
   ProcessInstance,
-  ProcessInstanceVariable,
-  ProcessDefinitionRepresentation,
-  ProcessFilterParamRepresentationModel,
-  TaskDetailsModel
+  ProcessInstanceVariable
 } from "@alfresco/adf-process-services";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: "app-customer-onboarding-form",
@@ -20,11 +18,14 @@ import {
 })
 export class CustomerOnboardingFormComponent implements OnInit {
   constructor(
+    private translate: TranslateService,
     public breakpointObserver: BreakpointObserver,
     private processService: ProcessService
   ) {}
 
   // Instance Variables
+  private selectedLanguage: string = "en";
+
   public gutterSize: number = 50;
   public rowHeight: number = 65;
 
@@ -44,6 +45,10 @@ export class CustomerOnboardingFormComponent implements OnInit {
   public isSmall: boolean;
   public isMedium: boolean;
   public isLarge: boolean;
+
+  selected() {
+    this.translate.use(this.selectedLanguage);
+  }
 
   ngOnInit() {
     this.breakpointObserver
@@ -155,8 +160,9 @@ export class CustomerOnboardingFormComponent implements OnInit {
       };
       arr.push(obj);
     }
+    console.log(arr);
 
-    const processDefinitionId = "test";
+    const processDefinitionId = "test:3:19";
     const name = "test";
     const variables: ProcessInstanceVariable[] = arr;
     this.processService
@@ -169,7 +175,5 @@ export class CustomerOnboardingFormComponent implements OnInit {
           console.log("Error: ", error);
         }
       );
-
-    console.log(variables);
   }
 }

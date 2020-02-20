@@ -1,4 +1,7 @@
 {
+  "header": {
+    "title": "Formulaire d'intégration des clients"
+  },
   "APP": {
     "INFO_DRAWER": {
       "TITLE": "Détails",

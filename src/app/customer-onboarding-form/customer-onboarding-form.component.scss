@@ -194,26 +194,16 @@ $white: #fff;
   }
 }
 
-/deep/ #tAndCheckbox .mat-checkbox-layout .mat-checkbox-label {
-  font-family: $fontFamily;
-  color: #4b4b4b;
-}
-
 // Tooltip
 /deep/ .mat-tooltip {
   @include text(21, 14);
   background: #5a5a5a;
   font-weight: 500;
+  height: auto !important;
 }
 
 // T & C p text styling
 #tAndC {
-  /deep/ #tAndCheckbox .mat-checkbox-layout {
-    white-space: normal !important;
-  }
-  /deep/ #tAndCheckbox .mat-checkbox-layout .mat-checkbox-label {
-    font-family: $fontFamily;
-  }
   p {
     margin: 0;
     padding: 0;
@@ -282,4 +272,67 @@ $white: #fff;
 #end {
   height: 25px;
   background: $green;
+}
+
+#tAndCheckbox {
+  width: 100%;
+  margin-top: 45px;
+  position: relative;
+  display: block;
+  label {
+    position: relative;
+    min-height: 34px;
+    padding-left: 40px;
+    margin-bottom: 0;
+    @include text(21, 14, $headingDark);
+    font-family: $fontFamily;
+    span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: -17px;
+      width: 29px;
+      height: 29px;
+      transition: transform 0.28s ease;
+      border-radius: 3px;
+      border: 1px solid $lightGreen;
+    }
+    &:after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 6px;
+      border-bottom: 3px solid white;
+      border-left: 3px solid white;
+      transform: rotate(-45deg) scale(0);
+      transition: transform ease 0.25s;
+      position: absolute;
+      top: -8px;
+      left: 6px;
+    }
+  }
+  input[type="checkbox"] {
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+    &:checked ~ label {
+      &:before {
+        border: 1px solid $lightGreen;
+        background-color: $lightGreen;
+      }
+      &:after {
+        transform: rotate(-45deg) scale(1);
+      }
+    }
+    &:focus + label::before {
+      outline: 0;
+    }
+  }
 }

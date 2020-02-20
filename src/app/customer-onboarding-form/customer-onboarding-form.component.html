@@ -1,3 +1,8 @@
+<select [(ngModel)]="selectedLanguage" (change)="selected()">
+  <option value="en">en</option>
+  <option value="es">es</option>
+</select>
+
 <div style="background-color: #fff;">
   <!-- TODO: HEADER -->
   <div id="header">
@@ -13,7 +18,7 @@
       </mat-grid-tile>
       <mat-grid-tile colspan="2" id="rightTile">
         <div>
-          <h1>Customer Onboarding Form</h1>
+          <h1>{{ "CUSTOMER.customerForm" | translate }}</h1>
           <div style="float: right;">
             <img
               src="../../assets/California first logowhite.svg"
@@ -45,7 +50,7 @@
             alt="logo"
             style="margin-bottom: 8px;"
           />
-          <h1>Customer Onboarding Form</h1>
+          <h1>{{ "CUSTOMER.customerForm" | translate }}</h1>
         </div>
       </mat-grid-tile>
     </mat-grid-list>
@@ -62,7 +67,7 @@
       <!--1. Primary Information -->
       <div>
         <h1 [ngStyle]="setMyStyles()">
-          Primary Information
+          {{ "CUSTOMER.primaryHeading.name" | translate }}
         </h1>
         <mat-grid-list
           [cols]="primaryCol"
@@ -71,7 +76,9 @@
         >
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>First Name </mat-label>
+              <mat-label>{{
+                "CUSTOMER.primaryHeading.labels.firstName" | translate
+              }}</mat-label>
               <input
                 matInput
                 required
@@ -83,7 +90,9 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Last Name </mat-label>
+              <mat-label>{{
+                "CUSTOMER.primaryHeading.labels.lastName" | translate
+              }}</mat-label>
               <input
                 matInput
                 required
@@ -95,7 +104,9 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Mobile Number </mat-label>
+              <mat-label>{{
+                "CUSTOMER.primaryHeading.labels.mobileNumber" | translate
+              }}</mat-label>
               <input
                 matInput
                 required
@@ -107,13 +118,17 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Email ID </mat-label>
+              <mat-label>{{
+                "CUSTOMER.primaryHeading.labels.emailID" | translate
+              }}</mat-label>
               <input matInput required ngModel name="email" #email="ngModel" />
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Birth Date </mat-label>
+              <mat-label>{{
+                "CUSTOMER.primaryHeading.labels.birthDate" | translate
+              }}</mat-label>
               <input
                 matInput
                 [matDatepicker]="picker"
@@ -131,7 +146,9 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Social Security Number </mat-label>
+              <mat-label>{{
+                "CUSTOMER.primaryHeading.labels.socialNumber" | translate
+              }}</mat-label>
               <input matInput required ngModel name="ssNo" #ssNo="ngModel" />
             </mat-form-field>
           </mat-grid-tile>
@@ -141,7 +158,7 @@
       <!--2. Income & Other Information -->
       <div>
         <h1 [ngStyle]="setMyStyles()">
-          Income & Other Information
+          {{ "CUSTOMER.incomeHeading.name" | translate }}
         </h1>
         <mat-grid-list
           [cols]="primaryCol"
@@ -150,7 +167,9 @@
         >
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Income </mat-label>
+              <mat-label
+                >{{ "CUSTOMER.incomeHeading.labels.income" | translate }}
+              </mat-label>
               <input
                 matInput
                 required
@@ -163,37 +182,72 @@
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Source of Income </mat-label>
+              <mat-label
+                >{{
+                  "CUSTOMER.incomeHeading.labels.sourceIncomeDropdown.label"
+                    | translate
+                }}
+              </mat-label>
               <mat-select
                 required
                 ngModel
                 name="sOfIncome"
                 #sOfIncome="ngModel"
               >
-                <mat-option value="option1">option 1</mat-option>
-                <mat-option value="option2">option 2</mat-option>
-                <mat-option value="option3">option 3</mat-option>
+                <mat-option value="option1">{{
+                  "CUSTOMER.incomeHeading.labels.sourceIncomeDropdown.options.option1"
+                    | translate
+                }}</mat-option>
+                <mat-option value="option2">{{
+                  "CUSTOMER.incomeHeading.labels.sourceIncomeDropdown.options.option2"
+                    | translate
+                }}</mat-option>
+                <mat-option value="option3">{{
+                  "CUSTOMER.incomeHeading.labels.sourceIncomeDropdown.options.option3"
+                    | translate
+                }}</mat-option>
               </mat-select>
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>How many people live in your house? </mat-label>
+              <mat-label>{{
+                "CUSTOMER.incomeHeading.labels.peopleLiveDropdown.label"
+                  | translate
+              }}</mat-label>
               <mat-select
                 required
                 ngModel
                 name="noOfPeople"
                 #noOfPeople="ngModel"
               >
-                <mat-option value="option1">option 1</mat-option>
-                <mat-option value="option2">option 2</mat-option>
-                <mat-option value="option3">option 3</mat-option>
+                <mat-option value="option1"
+                  >{{
+                    "CUSTOMER.incomeHeading.labels.peopleLiveDropdown.options.option1"
+                      | translate
+                  }}
+                </mat-option>
+                <mat-option value="option2"
+                  >{{
+                    "CUSTOMER.incomeHeading.labels.peopleLiveDropdown.options.option2"
+                      | translate
+                  }}
+                </mat-option>
+                <mat-option value="option3"
+                  >{{
+                    "CUSTOMER.incomeHeading.labels.peopleLiveDropdown.options.option3"
+                      | translate
+                  }}
+                </mat-option>
               </mat-select>
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox style="margin-top: 0px;"
-              >Do you live at the same address
+            <mat-checkbox
+              style="margin-top: 0px;"
+              name="liveSameAddress"
+              ngModel
+              >{{ "CUSTOMER.incomeHeading.labels.liveSameAddress" | translate }}
             </mat-checkbox>
           </mat-grid-tile>
         </mat-grid-list>
@@ -205,10 +259,10 @@
           [ngStyle]="setMyStyles()"
           [style.margin-bottom.px]="isXsmall ? '90' : '60'"
         >
-          Documents
-          <span style="font-size: 24px;"
-            >(Minimal Documentation for Faster Pre Qualification)</span
-          >
+          {{ "CUSTOMER.documentsHeading.name" | translate }}
+          <span style="font-size: 24px;">{{
+            "CUSTOMER.documentsHeading.spanText" | translate
+          }}</span>
         </h1>
         <mat-grid-list
           [cols]="documentsCol"
@@ -217,95 +271,133 @@
         >
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Driving Licence </mat-label>
+              <mat-label>{{
+                "CUSTOMER.documentsHeading.labels.drivingLicence.label"
+                  | translate
+              }}</mat-label>
               <ngx-mat-file-input ngModel name="drivingLicence" required>
               </ngx-mat-file-input>
               <img
                 src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
-                matTooltip="Upload valid Driving license"
+                matTooltip="{{
+                  'CUSTOMER.documentsHeading.labels.drivingLicence.tooltip'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Bank Statement </mat-label>
+              <mat-label>{{
+                "CUSTOMER.documentsHeading.labels.bankStatement.label"
+                  | translate
+              }}</mat-label>
               <ngx-mat-file-input ngModel name="bankStatement" required>
               </ngx-mat-file-input>
               <img
                 src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
-                matTooltip="Upload Bank statement within last 3 months"
+                matTooltip="{{
+                  'CUSTOMER.documentsHeading.labels.bankStatement.tooltip'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile *ngIf="isLarge"></mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Title Deed </mat-label>
+              <mat-label>{{
+                "CUSTOMER.documentsHeading.labels.titleDeed.label" | translate
+              }}</mat-label>
               <ngx-mat-file-input ngModel name="titleDeed" required>
               </ngx-mat-file-input>
               <img
                 src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
-                matTooltip="Upload"
+                matTooltip="{{
+                  'CUSTOMER.documentsHeading.labels.titleDeed.tooltip'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Credit Report </mat-label>
+              <mat-label>{{
+                "CUSTOMER.documentsHeading.labels.creditReport.label"
+                  | translate
+              }}</mat-label>
               <ngx-mat-file-input ngModel name="creditReport" required>
               </ngx-mat-file-input>
               <img
                 src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
-                matTooltip="Upload"
+                matTooltip="{{
+                  'CUSTOMER.documentsHeading.labels.creditReport.tooltip'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile *ngIf="isLarge"></mat-grid-tile>
-
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Tax Returns </mat-label>
+              <mat-label>{{
+                "CUSTOMER.documentsHeading.labels.taxReturns.label" | translate
+              }}</mat-label>
               <ngx-mat-file-input ngModel name="taxReturns">
               </ngx-mat-file-input>
               <img
                 src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
-                matTooltip="Upload latest Tax returns"
+                matTooltip="{{
+                  'CUSTOMER.documentsHeading.labels.taxReturns.tooltip'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Property Value </mat-label>
+              <mat-label>{{
+                "CUSTOMER.documentsHeading.labels.propertyValue.label"
+                  | translate
+              }}</mat-label>
               <ngx-mat-file-input ngModel name="propertyValue">
               </ngx-mat-file-input>
               <img
                 src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
-                matTooltip="Upload copy of property appraisal form"
+                matTooltip="{{
+                  'CUSTOMER.documentsHeading.labels.propertyValue.tooltip'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Utility Bill </mat-label>
+              <mat-label>{{
+                "CUSTOMER.documentsHeading.labels.utilityBill.label" | translate
+              }}</mat-label>
               <ngx-mat-file-input ngModel name="utilityBill">
               </ngx-mat-file-input>
               <img
                 src="../../assets/Line 3.png"
                 alt=""
                 matSuffix
-                matTooltip="Upload latest utility bill"
+                matTooltip="{{
+                  'CUSTOMER.documentsHeading.labels.utilityBill.tooltip'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
@@ -313,7 +405,9 @@
       </div>
       <!--Contractor Information -->
       <div>
-        <h1 [ngStyle]="setMyStyles()">Contractor Information</h1>
+        <h1 [ngStyle]="setMyStyles()">
+          {{ "CUSTOMER.contractorHeading.name" | translate }}
+        </h1>
         <mat-grid-list
           [cols]="contractorInfoCol"
           gutterSize="70px"
@@ -321,29 +415,53 @@
         >
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Apply with Renew Contractor (or)</mat-label>
+              <mat-label>{{
+                "CUSTOMER.contractorHeading.labels.renewContractorDropdown.label"
+                  | translate
+              }}</mat-label>
               <mat-select
                 required
                 ngModel
                 name="applyWithRenew"
                 #applyWithRenew="ngModel"
               >
-                <mat-option value="option1">option 1</mat-option>
-                <mat-option value="option1">option 2</mat-option>
-                <mat-option value="option2">option 3</mat-option>
+                <mat-option value="option1"
+                  >{{
+                    "CUSTOMER.contractorHeading.labels.renewContractorDropdown.options.option1"
+                      | translate
+                  }}
+                </mat-option>
+                <mat-option value="option2"
+                  >{{
+                    "CUSTOMER.contractorHeading.labels.renewContractorDropdown.options.option2"
+                      | translate
+                  }}
+                </mat-option>
+                <mat-option value="option3"
+                  >{{
+                    "CUSTOMER.contractorHeading.labels.renewContractorDropdown.options.option3"
+                      | translate
+                  }}
+                </mat-option>
               </mat-select>
             </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
             <mat-form-field appearance="standard">
-              <mat-label>Apply with Non Renew Contractor</mat-label>
+              <mat-label>{{
+                "CUSTOMER.contractorHeading.labels.nonRenewContractor.label"
+                  | translate
+              }}</mat-label>
               <input
                 matInput
                 required
                 ngModel
                 name="applyWithNonRenew"
                 #applyWithNonRenew="ngModel"
-                placeholder="Enter Manually"
+                placeholder="{{
+                  'CUSTOMER.contractorHeading.labels.nonRenewContractor.placeholder'
+                    | translate
+                }}"
               />
             </mat-form-field>
           </mat-grid-tile>
@@ -352,111 +470,91 @@
       <!--5. Financing Details -->
       <div>
         <h1 [ngStyle]="setCheckBoxStyles()">
-          Financing Details
+          {{ "CUSTOMER.financingHeading.name" | translate }}
         </h1>
         <mat-grid-list [cols]="checkboxCol" gutterSize="50px" rowHeight="50px">
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox disableRipple>Solar Panel Financing</mat-checkbox>
+            <mat-checkbox disableRipple>{{
+              "CUSTOMER.financingHeading.labels.solar" | translate
+            }}</mat-checkbox>
           </mat-grid-tile>
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox disableRipple
-              >Windows and Doors Financing</mat-checkbox
-            >
+            <mat-checkbox disableRipple>{{
+              "CUSTOMER.financingHeading.labels.windows" | translate
+            }}</mat-checkbox>
           </mat-grid-tile>
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox disableRipple
-              >Roofing and Roof replacement Financing</mat-checkbox
-            >
+            <mat-checkbox disableRipple>{{
+              "CUSTOMER.financingHeading.labels.roofing" | translate
+            }}</mat-checkbox>
           </mat-grid-tile>
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox disableRipple
-              >Landscaping and Turf Financing</mat-checkbox
-            >
+            <mat-checkbox disableRipple>{{
+              "CUSTOMER.financingHeading.labels.landscaping" | translate
+            }}</mat-checkbox>
           </mat-grid-tile>
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox disableRipple
-              >Hurricane Protection Financing</mat-checkbox
-            >
+            <mat-checkbox disableRipple>{{
+              "CUSTOMER.financingHeading.labels.hurricane" | translate
+            }}</mat-checkbox>
           </mat-grid-tile>
           <mat-grid-tile class="checkBoxTile">
-            <mat-checkbox disableRipple
-              >Earthquake Protection Financing</mat-checkbox
-            >
+            <mat-checkbox disableRipple>{{
+              "CUSTOMER.financingHeading.labels.earthquake" | translate
+            }}</mat-checkbox>
           </mat-grid-tile>
         </mat-grid-list>
       </div>
 
       <!--6. Terms & Conditions -->
       <div id="tAndC">
-        <h1 [ngStyle]="setMyStyles()">Terms & Conditions</h1>
+        <h1 [ngStyle]="setMyStyles()">
+          {{ "CUSTOMER.termsHeading.name" | translate }}
+        </h1>
         <h4>
-          Consent to do busineess electronically
+          {{ "CUSTOMER.termsHeading.texts.text1" | translate }}
         </h4>
         <p>
-          - Federal <span style="font-weight: bold;">ESIGN</span> Disclosure and
-          Consent
+          - Federal <span style="font-weight: bold;">ESIGN</span>
+          {{ "CUSTOMER.termsHeading.texts.text2" | translate }}
         </p>
         <p>
-          - I understand that the following disclosures are required by the
-          federal Electronic Signatures in Global and National Commerce Act
-          (“ESIGN”). They are necessary to submit my credit application
-          electronically; I confirm my consent to these ESIGN disclosures by
-          clicking “I have reviewed this entire Consent and Authorization, I
-          authorize You to process my Application for financing, and I consent
-          to do business electronically.” below.
+          {{ "CUSTOMER.termsHeading.texts.text3" | translate }}
         </p>
         <h4>
-          Acknowledgment and Authorization
+          {{ "CUSTOMER.termsHeading.texts.text4" | translate }}
         </h4>
         <p>
-          - I am the record owner of the property listed in the Application,
-          which I certify is my primary residence; any information I furnish to
-          You is true and complete; Pursuant to the federal Fair Credit
-          Reporting Act, I authorize You to obtain consumer reports from
-          consumer reporting agencies in connection with my Application,
-          including information on my income and employment status;
+          {{ "CUSTOMER.termsHeading.texts.text5" | translate }}
         </p>
         <p>
-          - I understand in some circumstances I may be subject to multiple
-          consumer reporting inquiries to determine my potential eligibility;
+          {{ "CUSTOMER.termsHeading.texts.text6" | translate }}
         </p>
         <p>
-          - I will advise You of any material changes in my financial condition
-          during the Application process and term of the financing;
+          {{ "CUSTOMER.termsHeading.texts.text7" | translate }}
         </p>
         <p>
-          - I authorize You to provide the status of my Application to my
-          contractor; and
+          {{ "CUSTOMER.termsHeading.texts.text8" | translate }}
         </p>
         <p>
-          - I authorize You to call any telephone number I provide and
-          understand that I may incur a charge from the telecommunications,
-          wireless or Internet services and that You have no liability for such
-          charges.
+          {{ "CUSTOMER.termsHeading.texts.text9" | translate }}
         </p>
         <p>
-          - I understand financing is subject to approval and certain
-          restrictions may apply.
+          {{ "CUSTOMER.termsHeading.texts.text10" | translate }}
         </p>
 
         <h4>
-          concent to Electronic Submission Application
+          {{ "CUSTOMER.termsHeading.texts.text11" | translate }}
         </h4>
         <p>
-          - By clicking “I have reviewed this entire Consent and Authorization,
-          I authorize You to process my Application for financing, and I consent
-          to do business electronically.” below, I hereby electronically sign
-          this Application for financing and I affirmatively consent and agree
-          that my electronic signature on this Application for financing has the
-          same effect as if I had signed it manually.
+          {{ "CUSTOMER.termsHeading.texts.text12" | translate }}
         </p>
 
-        <div id="tAndCheckbox" style="margin-top: 30px;">
-          <mat-checkbox disableRipple>
-            I have reviewed this entire Consent and Authorization, I authorize
-            You to process my Application for financing, and I concent to do
-            business electronically.
-          </mat-checkbox>
+        <div id="tAndCheckbox">
+          <input type="checkbox" id="vehicle1" required />
+          <label for="vehicle1">
+            {{ "CUSTOMER.termsHeading.texts.checkboxLabel" | translate }}
+          </label>
         </div>
       </div>
       <button
@@ -466,7 +564,7 @@
         [style.margin-bottom.px]="buttonBottomMargin"
         id="applyBtn"
       >
-        Apply
+        {{ "CUSTOMER.applyBtn" | translate }}
       </button>
     </form>
   </div>
@@ -484,7 +582,7 @@
       </mat-grid-tile>
       <mat-grid-tile id="middleTile">
         <div>
-          <p style="color: #9E9E9E;">Contact Us</p>
+          <p style="color: #9E9E9E;">{{ "CUSTOMER.contact" | translate }}</p>
           <p>info@renewfinancial.com</p>
           <p style="margin-top: 5px;">844-736-3934</p>
         </div>

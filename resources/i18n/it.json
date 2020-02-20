@@ -1,4 +1,7 @@
 {
+  "header": {
+    "title": "Modulo di onboarding del cliente"
+  },
   "APP": {
     "INFO_DRAWER": {
       "TITLE": "Dettagli",
