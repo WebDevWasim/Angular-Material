@@ -1,14 +1,14 @@
 {
   "headerImages": {
-    "leftLogo": "../../assets/Group 1logo.svg",
+    "leftLogo": "../../assets/images/Group 1logo.svg",
     "rightLogos": {
-      "rightTile1": "../../assets/California first logowhite.svg",
-      "rightTile2": "../../assets/Renew pace logowhite.svg"
+      "rightTile1": "../../assets/images/California first logowhite.svg",
+      "rightTile2": "../../assets/images/Renew pace logowhite.svg"
     }
   },
-  "upload-icon": "../../assets/Line 3.png",
-  "footer-images": {
-    "leftTile": "../../assets/Renew logo.svg",
-    "rightTile": "../../assets/Group 4.svg"
+  "uploadIcon": "../../assets/images/Line 3.png",
+  "footerImages": {
+    "leftTile": "../../assets/images/Renew logo.svg",
+    "rightTile": "../../assets/images/Group 4.svg"
   }
 }

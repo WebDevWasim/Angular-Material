@@ -26,7 +26,7 @@ export class CustomerOnboardingFormComponent implements OnInit {
 
   // Instance Variables
   private selectedLanguage: string = "en";
-  public imageSources = config;
+  public images = config;
 
   public gutterSize: number = 50;
   public rowHeight: number = 65;

@@ -14,20 +14,24 @@
       *ngIf="isMedium || isLarge"
     >
       <mat-grid-tile id="leftTile"
-        ><img src="../../assets/Group 1logo.svg" height="75px" alt="logo" />
+        ><img
+          [src]="images['headerImages']['leftLogo']"
+          height="75px"
+          alt="logo"
+        />
       </mat-grid-tile>
       <mat-grid-tile colspan="2" id="rightTile">
         <div>
           <h1>{{ "CUSTOMER.customerForm" | translate }}</h1>
           <div style="float: right;">
             <img
-              src="../../assets/California first logowhite.svg"
+              [src]="images['headerImages']['rightLogos']['rightTile1']"
               alt=""
               max-height="26px"
               style="margin-right: 26px;"
             />
             <img
-              src="../../assets/Renew pace logowhite.svg"
+              [src]="images['headerImages']['rightLogos']['rightTile2']"
               alt=""
               height="26px"
             />
@@ -45,7 +49,7 @@
       <mat-grid-tile id="tileMob">
         <div>
           <img
-            src="../../assets/Group 1logo.svg"
+            [src]="images['headerImages']['leftLogo']"
             height="60px"
             alt="logo"
             style="margin-bottom: 8px;"
@@ -278,7 +282,7 @@
               <ngx-mat-file-input ngModel name="drivingLicence" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Line 3.png"
+                [src]="images['uploadIcon']"
                 alt=""
                 matSuffix
                 matTooltip="{{
@@ -297,7 +301,7 @@
               <ngx-mat-file-input ngModel name="bankStatement" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Line 3.png"
+                [src]="images['uploadIcon']"
                 alt=""
                 matSuffix
                 matTooltip="{{
@@ -316,7 +320,7 @@
               <ngx-mat-file-input ngModel name="titleDeed" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Line 3.png"
+                [src]="images['uploadIcon']"
                 alt=""
                 matSuffix
                 matTooltip="{{
@@ -335,7 +339,7 @@
               <ngx-mat-file-input ngModel name="creditReport" required>
               </ngx-mat-file-input>
               <img
-                src="../../assets/Line 3.png"
+                [src]="images['uploadIcon']"
                 alt=""
                 matSuffix
                 matTooltip="{{
@@ -354,7 +358,7 @@
               <ngx-mat-file-input ngModel name="taxReturns">
               </ngx-mat-file-input>
               <img
-                src="../../assets/Line 3.png"
+                [src]="images['uploadIcon']"
                 alt=""
                 matSuffix
                 matTooltip="{{
@@ -373,7 +377,7 @@
               <ngx-mat-file-input ngModel name="propertyValue">
               </ngx-mat-file-input>
               <img
-                src="../../assets/Line 3.png"
+                [src]="images['uploadIcon']"
                 alt=""
                 matSuffix
                 matTooltip="{{
@@ -391,7 +395,7 @@
               <ngx-mat-file-input ngModel name="utilityBill">
               </ngx-mat-file-input>
               <img
-                src="../../assets/Line 3.png"
+                [src]="images['uploadIcon']"
                 alt=""
                 matSuffix
                 matTooltip="{{
@@ -578,7 +582,11 @@
       *ngIf="isMedium || isLarge"
     >
       <mat-grid-tile id="leftTile"
-        ><img src="../../assets/Renew logo.svg" height="70px" alt="logo" />
+        ><img
+          [src]="images['footerImages']['leftTile']"
+          height="70px"
+          alt="logo"
+        />
       </mat-grid-tile>
       <mat-grid-tile id="middleTile">
         <div>
@@ -588,25 +596,33 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile id="logoTile">
-        <img src="../../assets/Group 4.svg" alt="line" height="70px" />
+        <img
+          [src]="images['footerImages']['rightTile']"
+          alt="line"
+          height="70px"
+        />
       </mat-grid-tile>
     </mat-grid-list>
     <!-- Footer Mobile View -->
     <div id="footerMob" *ngIf="isXsmall || isSmall">
       <mat-grid-list cols="6" rowHeight="58px">
         <mat-grid-tile colspan="2" class="footerLogo"
-          ><img src="../../assets/Group 1logo.svg" height="27px" alt="logo" />
+          ><img
+            [src]="images['headerImages']['leftLogo']"
+            height="27px"
+            alt="logo"
+          />
         </mat-grid-tile>
         <mat-grid-tile colspan="2" class="footerLogo">
           <img
-            src="../../assets/California first logowhite.svg"
+            [src]="images['headerImages']['rightLogos']['rightTile1']"
             alt="California first"
             height="21px"
           />
         </mat-grid-tile>
         <mat-grid-tile colspan="2" class="footerLogo">
           <img
-            src="../../assets/Renew pace logowhite.svg"
+            [src]="images['headerImages']['rightLogos']['rightTile2']"
             alt="Renew pace"
             height="21px"
           />
