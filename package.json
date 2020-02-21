@@ -46,6 +46,7 @@
     "classlist.js": "1.1.20150312",
     "core-js": "^2.5.4",
     "custom-event-polyfill": "0.3.0",
+    "google-translate-api": "^2.3.0",
     "hammerjs": "2.0.8",
     "minimatch-browser": "1.0.0",
     "moment": "2.22.2",

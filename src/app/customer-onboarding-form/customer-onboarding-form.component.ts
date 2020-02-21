@@ -9,8 +9,9 @@ import {
   ProcessInstance,
   ProcessInstanceVariable
 } from "@alfresco/adf-process-services";
-import { TranslateService } from "@ngx-translate/core";
 import config from "../../assets/config.json";
+import { TranslationService } from "@alfresco/adf-core";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: "app-customer-onboarding-form",
@@ -19,9 +20,10 @@ import config from "../../assets/config.json";
 })
 export class CustomerOnboardingFormComponent implements OnInit {
   constructor(
-    private translate: TranslateService,
+    public translationService: TranslationService,
     public breakpointObserver: BreakpointObserver,
-    private processService: ProcessService
+    private processService: ProcessService,
+    private http: HttpClient
   ) {}
 
   // Instance Variables
@@ -49,10 +51,24 @@ export class CustomerOnboardingFormComponent implements OnInit {
   public isLarge: boolean;
 
   selected() {
-    this.translate.use(this.selectedLanguage);
+    this.translationService.use(this.selectedLanguage);
   }
 
   ngOnInit() {
+    const headerDict = {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "Access-Control-Allow-Headers": "Content-Type"
+    };
+
+    const requestOptions = {
+      headers: new Headers(headerDict)
+    };
+    this.http
+      .get("http://172.16.0.112:8089/renew-financial/pace/v1/sourceofincome")
+      .subscribe(res => {
+        console.log(res);
+      });
     this.breakpointObserver
       .observe([
         Breakpoints.XSmall,
@@ -77,7 +93,7 @@ export class CustomerOnboardingFormComponent implements OnInit {
           this.spanText = 20;
           this.formMargin = 30;
           this.titleMargin = 50;
-          this.buttonTopMargin = 120;
+          this.buttonTopMargin = 80;
           this.buttonBottomMargin = 50;
         } else if (state.breakpoints[Breakpoints.Small]) {
           this.isXsmall = false;
@@ -93,7 +109,7 @@ export class CustomerOnboardingFormComponent implements OnInit {
           this.fontSize = 30;
           this.formMargin = 75;
           this.titleMargin = 60;
-          this.buttonTopMargin = 90;
+          this.buttonTopMargin = 70;
           this.buttonBottomMargin = 50;
         } else if (state.breakpoints[Breakpoints.Medium]) {
           this.isXsmall = false;
@@ -109,7 +125,7 @@ export class CustomerOnboardingFormComponent implements OnInit {
           this.fontSize = 36;
           this.formMargin = 97;
           this.titleMargin = 60;
-          this.buttonTopMargin = 90;
+          this.buttonTopMargin = 60;
           this.buttonBottomMargin = 30;
         } else {
           this.isXsmall = false;

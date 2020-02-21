@@ -176,10 +176,6 @@ $white: #fff;
   background-color: $lightGreen;
 }
 
-// /deep/ .mat-ripple-element {
-//   background: $lightGreen;
-// }
-
 /deep/ .mat-checkbox-inner-container {
   height: 29px !important;
   width: 29px !important;
@@ -230,7 +226,7 @@ $white: #fff;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  // margin-top: 50px;
   padding: 15px 50px;
   color: $green;
   border: 1px solid $green;
